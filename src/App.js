@@ -12,6 +12,7 @@ const MainContainer = styled.div`
 
 const LyricsContainer = styled.div`
   border: 5px solid orange;
+  width: 750px;
   height: 300px;
   flex: 0 0 300px;
   overflow: hidden;
