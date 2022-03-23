@@ -28,17 +28,19 @@ const LyricsImage = styled.img`
 const BlurContainer = styled.div`
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
-  height: 120px;
   position: absolute;
   left: 0;
+  transition: height 0.5s ease-out;
 `;
 
 const BlurTop = styled(BlurContainer)`
   top: 0;
+  height: ${({ hasStarted }) => (hasStarted ? "120px" : "0")};
 `;
 
 const BlurBottom = styled(BlurContainer)`
   bottom: 0;
+  height: ${({ hasStarted }) => (hasStarted ? "120px" : "0")};
 `;
 
 const SettingsContainer = styled.div`
@@ -83,12 +85,19 @@ function App() {
   const audioRef = useRef();
   const [cueSheet, setCueSheet] = useState(initialCueSheet);
   const [cueSheetIndex, setCueSheetIndex] = useState(-1);
+  const [startSeconds, setStartSeconds] = useState(initialCueSheet[0].seconds);
+  const [hasStarted, setHasStarted] = useState(false);
 
   const handleTimeUpdate = (e) => {
     const potentialMatches = cueSheet.filter(
       (line) => e.target.currentTime > line.seconds
     );
     setCueSheetIndex(potentialMatches.length - 1);
+    if (e.target.currentTime > startSeconds) {
+      setHasStarted(true);
+    } else {
+      setHasStarted(false);
+    }
   };
 
   const updateSeconds = (index, newValue) => {
@@ -125,12 +134,27 @@ function App() {
           src="lyrics/Goobers-Hill-Blues.png"
           currentTransform={cueSheet[cueSheetIndex]?.transform}
         />
-        <BlurTop />
-        <BlurBottom />
+        <BlurTop hasStarted={hasStarted} />
+        <BlurBottom hasStarted={hasStarted} />
       </LyricsContainer>
 
       <p>settings:</p>
       <SettingsContainer>
+        <LineRow>
+          <p>start</p>
+          <p>
+            <label>timecode in seconds:</label>
+            <input
+              value={startSeconds}
+              onChange={(e) => setStartSeconds(parseInt(e.target.value))}
+            />
+          </p>
+          <button
+            onClick={() => (audioRef.current.currentTime = startSeconds + 0.01)}
+          >
+            preview
+          </button>
+        </LineRow>
         {cueSheet.map((line, index) => (
           <LineRow key={line.line}>
             <p>line {line.line}</p>
