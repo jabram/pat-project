@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import MainLayout from "./MainLayout/MainLayout";
 
 const App = () => {
   return (
-    <MainLayout>
+    <MainLayout showMenu={true}>
       <p>this is the whole main layout deal</p>
       <p>
         Culpa fugiat ad tempor dolor enim anim quis voluptate qui consequat
