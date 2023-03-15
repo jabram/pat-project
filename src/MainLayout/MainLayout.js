@@ -1,15 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { ReactComponent as Hamburger } from "./hamburger.svg";
 import styles from "./MainLayout.module.scss";
 
 const MainLayout = ({ showMenu, children }) => {
   return (
     <div className={styles.layoutContainer}>
-      {showMenu && (
-        <FontAwesomeIcon className={styles.menuIcon} icon={faBars} />
-      )}
+      {showMenu && <Hamburger className={styles.menuIcon} />}
       {children}
     </div>
   );
