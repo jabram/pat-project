@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { ReactComponent as Hamburger } from "./hamburger.svg";
 import styles from "./MainLayout.module.scss";
+import MainMenu from "../MainMenu/MainMenu";
+import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 
 const MainLayout = ({ showMenu, children }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <div className={styles.layoutContainer}>
-      {showMenu && <Hamburger className={styles.menuIcon} />}
+      {showMenu && (
+        <ButtonUnstyled onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Hamburger className={styles.menuIcon} />
+        </ButtonUnstyled>
+      )}
       {children}
+      <MainMenu
+        isMenuOpen={isMenuOpen}
+        closeMenu={() => setIsMenuOpen(false)}
+      />
     </div>
   );
 };
