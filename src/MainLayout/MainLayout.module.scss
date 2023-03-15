@@ -3,14 +3,14 @@
   height: 100vh;
   overflow-y: auto;
   position: relative;
-  padding: 60px 50px;
+  padding: 6rem calc(5rem + 40px + 5rem) 16rem 5rem; // NOTE: calc is width of hamburger plus left spacing plus standard 50
   background: #262626;
   color: #fff;
 }
 
 .menuIcon {
   position: fixed;
-  top: 30px;
-  right: 20px;
+  top: 5rem;
+  right: 5rem;
   font-size: 3rem;
 }
