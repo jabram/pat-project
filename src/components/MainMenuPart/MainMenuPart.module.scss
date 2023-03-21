@@ -1,0 +1,28 @@
+.part {
+  font-family: "DIN Condensed Bold";
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+button.titleButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+}
+
+.titleText {
+  padding-right: 7rem;
+}
+
+.partContent {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  // transition: all 0.2s ease-in;
+
+  &.isExpanded {
+    padding: 1rem 0 2rem;
+    max-height: 999rem;
+  }
+}
