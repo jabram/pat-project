@@ -14,11 +14,7 @@ export const Default = {
 
 export const IconButton = {
   args: {
-    children: (
-      <div style={{ background: "#000", padding: "10px" }}>
-        <Hamburger />
-      </div>
-    ),
+    children: <Hamburger />,
   },
 };
 
@@ -27,7 +23,7 @@ export const SomethingMoreComplex = {
     children: (
       <div
         style={{
-          background: "#000",
+          border: "2px solid green",
           padding: "10px",
           display: "flex",
           alignItems: "center",

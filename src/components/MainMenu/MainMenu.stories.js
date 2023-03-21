@@ -58,6 +58,7 @@ export default Story;
 
 export const Default = {
   args: {
+    isMenuOpen: true,
     closeMenu: () => console.log("clicked close menu!"),
   },
 };
