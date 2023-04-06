@@ -1,4 +1,4 @@
-import { MAIN_MENU_FOLDER } from "../../constants";
+import { MAIN_MENU_FOLDER } from "../../config/constants";
 import MainMenuPart from "./MainMenuPart";
 
 const Story = {
