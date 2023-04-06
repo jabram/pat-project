@@ -16,13 +16,5 @@ button.titleButton {
 }
 
 .partContent {
-  padding: 0;
-  max-height: 0;
   overflow: hidden;
-  // transition: all 0.2s ease-in;
-
-  &.isExpanded {
-    padding: 1rem 0 2rem;
-    max-height: 999rem;
-  }
 }

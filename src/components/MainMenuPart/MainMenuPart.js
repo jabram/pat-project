@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import styles from "./MainMenuPart.module.scss";
 import { ReactComponent as CaretUp } from "./caretUp.svg";
 import { ReactComponent as CaretDown } from "./caretDown.svg";
@@ -18,13 +19,17 @@ const MainMenuPart = ({ title, children }) => {
         <MenuText className={styles.titleText} text={title} />
         {isExpanded ? <CaretUp /> : <CaretDown />}
       </ButtonUnstyled>
-      <div
-        className={`${styles.partContent} ${
-          isExpanded ? styles.isExpanded : ""
-        }`}
+      <motion.div
+        className={styles.partContent}
+        initial="collapsed"
+        animate={isExpanded ? "expanded" : "collapsed"}
+        variants={{
+          expanded: { height: "auto", padding: "1rem 0 2rem" },
+          collapsed: { height: 0, padding: 0 },
+        }}
       >
         {children}
-      </div>
+      </motion.div>
     </div>
   );
 };
