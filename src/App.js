@@ -1,4 +1,5 @@
 import React from "react";
+import Gallery from "./components/Gallery/Gallery";
 import MainLayout from "./components/MainLayout/MainLayout";
 
 const App = () => {
@@ -139,6 +140,7 @@ const App = () => {
         Aliqua sunt consectetur magna sint aute tempor officia. In anim non
         consequat et occaecat amet irure magna dolor occaecat exercitation.
       </p>
+      <Gallery />
       <p>
         Exercitation sint consequat Lorem ex duis minim sunt eu laborum magna
         consectetur officia.
