@@ -18,8 +18,9 @@
 .menuContainer {
   max-width: 400px;
   height: 100vh;
-  border-radius: 30px;
-  padding: 2rem 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: -10px 20px 54px rgba(0, 0, 0, 0.25);
   background: #000;
   font-family: "DIN Condensed Bold";
   color: #fff;
@@ -43,7 +44,7 @@
 .menuContent {
   height: 100%;
   overflow-y: auto;
-  padding: 3rem 0;
+  padding-bottom: 8rem;
 }
 
 .menuTitle {
@@ -51,6 +52,11 @@
   line-height: 1.2;
   text-transform: uppercase;
   margin: 0;
-  padding: 0.6rem 4rem 0;
+  padding: 0.6rem 3rem 0;
   background: rgba(255, 255, 255, 0.3);
+
+  &.header {
+    padding-top: 2rem;
+    border-top-left-radius: 3rem;
+  }
 }

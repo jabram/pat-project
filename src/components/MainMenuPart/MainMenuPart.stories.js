@@ -70,3 +70,10 @@ export const MultipleStacked = {
     ),
   ],
 };
+
+export const DirectLink = {
+  args: {
+    title: "This one doesn't expand, just goes",
+    onClick: () => console.log("custom onclick!"),
+  },
+};

@@ -7,17 +7,17 @@ import { ReactComponent as CaretDown } from "./caretDown.svg";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 import MenuText from "../MenuText/MenuText";
 
-const MainMenuPart = ({ title, children }) => {
+const MainMenuPart = ({ title, onClick, children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className={styles.part}>
       <ButtonUnstyled
         className={styles.titleButton}
-        onClick={() => setIsExpanded(!isExpanded)}
+        onClick={onClick ? onClick : () => setIsExpanded(!isExpanded)}
       >
         <MenuText className={styles.titleText} text={title} />
-        {isExpanded ? <CaretUp /> : <CaretDown />}
+        {!onClick && (isExpanded ? <CaretUp /> : <CaretDown />)}
       </ButtonUnstyled>
       <motion.div
         className={styles.partContent}
@@ -36,11 +36,13 @@ const MainMenuPart = ({ title, children }) => {
 
 MainMenuPart.propTypes = {
   title: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
   children: PropTypes.node,
 };
 
 MainMenuPart.defaultProps = {
   title: undefined,
+  onClick: undefined,
   children: undefined,
 };
 

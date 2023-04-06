@@ -13,11 +13,14 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
     >
       <div className={styles.menuContainer}>
         <div className={styles.menuContent}>
-          <h2 className={styles.menuTitle}>Table of Contents</h2>
+          <h2 className={`${styles.menuTitle} ${styles.header}`}>
+            Table of Contents
+          </h2>
 
-          <MainMenuPart title="Introduction">
-            <MainMenuChapter title="Chapter 0: Point of Departure" />
-          </MainMenuPart>
+          <MainMenuPart
+            title="Introduction"
+            onClick={() => console.log("TODO: go right in here")}
+          />
           <MainMenuPart title="Part 1: The 70's">
             <MainMenuChapter title="Chapter 1: Goober's Hill Blues" />
             <MainMenuChapter title="Chapter 2: Carbondale" />
@@ -49,6 +52,21 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
             <MainMenuChapter title="Chapter 5: No Fight Left" />
             <MainMenuChapter title="Chapter 6: I Had No Idea" />
           </MainMenuPart>
+
+          <h2 className={styles.menuTitle}>Options</h2>
+
+          <MainMenuPart
+            title="Launch Audio Player"
+            onClick={() => console.log("TODO: launch audio player")}
+          />
+          <MainMenuPart
+            title="Dark Mode"
+            onClick={() =>
+              console.log(
+                "TODO: dark mode switch and better MainMenuPart content"
+              )
+            }
+          />
         </div>
 
         <ButtonUnstyled onClick={closeMenu} className={styles.closeButton}>
