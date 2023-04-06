@@ -25,7 +25,7 @@ export const Default = {
 
 export const FitsWithinContainer = {
   args: {
-    title: "I'm in a container!",
+    title: "I'm in a container! And I have a long title that wraps!",
     children: (
       <>
         <p>hi</p>
@@ -69,11 +69,4 @@ export const MultipleStacked = {
       </>
     ),
   ],
-};
-
-export const DirectLink = {
-  args: {
-    title: "This one doesn't expand, just goes",
-    onClick: () => console.log("custom onclick!"),
-  },
 };

@@ -5,6 +5,7 @@ import { ReactComponent as CloseX } from "./closeX.svg";
 import MainMenuPart from "../MainMenuPart/MainMenuPart";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 import MainMenuChapter from "../MainMenuChapter/MainMenuChapter";
+import MainMenuButton from "../MainMenuButton/MainMenuButton";
 
 const MainMenu = ({ isMenuOpen, closeMenu }) => {
   return (
@@ -17,10 +18,9 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
             Table of Contents
           </h2>
 
-          <MainMenuPart
-            title="Introduction"
-            onClick={() => console.log("TODO: go right in here")}
-          />
+          <MainMenuButton onClick={() => console.log("TODO: go to intro")}>
+            Introduction
+          </MainMenuButton>
           <MainMenuPart title="Part 1: The 70's">
             <MainMenuChapter title="Chapter 1: Goober's Hill Blues" />
             <MainMenuChapter title="Chapter 2: Carbondale" />
@@ -55,18 +55,20 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
 
           <h2 className={styles.menuTitle}>Options</h2>
 
-          <MainMenuPart
-            title="Launch Audio Player"
+          <MainMenuButton
             onClick={() => console.log("TODO: launch audio player")}
-          />
-          <MainMenuPart
-            title="Dark Mode"
+          >
+            Launch Audio Player
+          </MainMenuButton>
+          <MainMenuButton
             onClick={() =>
               console.log(
                 "TODO: dark mode switch and better MainMenuPart content"
               )
             }
-          />
+          >
+            Dark Mode
+          </MainMenuButton>
         </div>
 
         <ButtonUnstyled onClick={closeMenu} className={styles.closeButton}>

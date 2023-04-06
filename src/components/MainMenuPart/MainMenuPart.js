@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 import styles from "./MainMenuPart.module.scss";
 import { ReactComponent as CaretUp } from "./caretUp.svg";
 import { ReactComponent as CaretDown } from "./caretDown.svg";
-import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 import MenuText from "../MenuText/MenuText";
+import MainMenuButton from "../MainMenuButton/MainMenuButton";
 
-const MainMenuPart = ({ title, onClick, children }) => {
+const MainMenuPart = ({ title, children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <div className={styles.part}>
-      <ButtonUnstyled
+      <MainMenuButton
         className={styles.titleButton}
-        onClick={onClick ? onClick : () => setIsExpanded(!isExpanded)}
+        onClick={() => setIsExpanded(!isExpanded)}
       >
         <MenuText className={styles.titleText} text={title} />
-        {!onClick && (isExpanded ? <CaretUp /> : <CaretDown />)}
-      </ButtonUnstyled>
+        {isExpanded ? <CaretUp /> : <CaretDown />}
+      </MainMenuButton>
       <motion.div
         className={styles.partContent}
         initial="collapsed"
@@ -36,13 +36,11 @@ const MainMenuPart = ({ title, onClick, children }) => {
 
 MainMenuPart.propTypes = {
   title: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
   children: PropTypes.node,
 };
 
 MainMenuPart.defaultProps = {
   title: undefined,
-  onClick: undefined,
   children: undefined,
 };
 
