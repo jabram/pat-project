@@ -10,10 +10,13 @@ export default Story;
 
 export const Default = {
   args: {
-    showMenu: true,
     children: (
       <>
         <p>this is the whole main layout deal</p>
+        <p>
+          it's concerned with displaying the main menu or not, and some vertical
+          padding
+        </p>
         <p>
           Culpa fugiat ad tempor dolor enim anim quis voluptate qui consequat
           labore.
@@ -72,14 +75,12 @@ export const Default = {
 
 export const LittleContent = {
   args: {
-    showMenu: true,
     children: <p>this one only has one paragraph</p>,
   },
 };
 
 export const LotsOfContent = {
   args: {
-    showMenu: true,
     children: (
       <>
         <p>this is the whole main layout deal in triple</p>
@@ -243,6 +244,7 @@ export const LotsOfContent = {
 
 export const NoMenu = {
   args: {
+    showMenu: false,
     children: (
       <>
         <p>this one doesn't include the hamburger menu</p>

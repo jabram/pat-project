@@ -30,7 +30,7 @@ MainLayout.propTypes = {
 };
 
 MainLayout.defaultProps = {
-  showMenu: false,
+  showMenu: true,
   children: undefined,
 };
 

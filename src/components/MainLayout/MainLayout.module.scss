@@ -1,9 +1,7 @@
 .layoutContainer {
-  box-sizing: border-box;
-  height: 100vh;
-  overflow-y: auto;
+  min-height: 100vh;
   position: relative;
-  padding: 6rem calc(5rem + 40px + 5rem) 16rem 5rem; // NOTE: calc is width of hamburger plus left spacing plus standard 50
+  padding: 6rem 0 16rem 0;
 }
 
 .menuIcon {
