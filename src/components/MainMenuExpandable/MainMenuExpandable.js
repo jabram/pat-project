@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import styles from "./MainMenuPart.module.scss";
+import styles from "./MainMenuExpandable.module.scss";
 import { ReactComponent as CaretUp } from "./caretUp.svg";
 import { ReactComponent as CaretDown } from "./caretDown.svg";
 import MenuText from "../MenuText/MenuText";
 import MainMenuButton from "../MainMenuButton/MainMenuButton";
 
-const MainMenuPart = ({ title, children }) => {
+const MainMenuExpandable = ({ title, children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className={styles.part}>
-      <MainMenuButton
-        className={styles.titleButton}
-        onClick={() => setIsExpanded(!isExpanded)}
-      >
+    <div className={styles.section}>
+      <MainMenuButton onClick={() => setIsExpanded(!isExpanded)}>
         <MenuText className={styles.titleText} text={title} />
         {isExpanded ? <CaretUp /> : <CaretDown />}
       </MainMenuButton>
       <motion.div
-        className={styles.partContent}
+        className={styles.sectionContent}
         initial="collapsed"
         animate={isExpanded ? "expanded" : "collapsed"}
         variants={{
@@ -34,14 +31,14 @@ const MainMenuPart = ({ title, children }) => {
   );
 };
 
-MainMenuPart.propTypes = {
+MainMenuExpandable.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node,
 };
 
-MainMenuPart.defaultProps = {
+MainMenuExpandable.defaultProps = {
   title: undefined,
   children: undefined,
 };
 
-export default MainMenuPart;
+export default MainMenuExpandable;

@@ -4,10 +4,12 @@ import MainLayout from "./components/MainLayout/MainLayout";
 import StoryContainer from "./components/StoryContainer/StoryContainer";
 
 const App = () => {
+  const showMenu = true; // TODO: make realer
+
   return (
-    <MainLayout showMenu={true}>
+    <MainLayout showMenu={showMenu}>
       <p>this is the whole main layout deal</p>
-      <StoryContainer showMenu={true}>
+      <StoryContainer makeRoomForMenu={showMenu}>
         <p>here's a story</p>
         <p>
           Culpa fugiat ad tempor dolor enim anim quis voluptate qui consequat

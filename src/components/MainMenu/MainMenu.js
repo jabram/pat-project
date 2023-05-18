@@ -2,10 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./MainMenu.module.scss";
 import { ReactComponent as CloseX } from "./closeX.svg";
-import MainMenuPart from "../MainMenuPart/MainMenuPart";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
-import MainMenuChapter from "../MainMenuChapter/MainMenuChapter";
-import MainMenuButton from "../MainMenuButton/MainMenuButton";
+import MainMenuItem from "../MainMenuItem/MainMenuItem";
+import MainMenuExpandable from "../MainMenuExpandable/MainMenuExpandable";
 
 const MainMenu = ({ isMenuOpen, closeMenu }) => {
   return (
@@ -18,57 +17,151 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
             Table of Contents
           </h2>
 
-          <MainMenuButton onClick={() => console.log("TODO: go to intro")}>
-            Introduction
-          </MainMenuButton>
-          <MainMenuPart title="Part 1: The 70's">
-            <MainMenuChapter title="Chapter 1: Goober's Hill Blues" />
-            <MainMenuChapter title="Chapter 2: Carbondale" />
-            <MainMenuChapter title="Chapter 3: Game Changers" />
-            <MainMenuChapter title="Chapter 4: Birth of a Cynic" />
-            <MainMenuChapter title="Chapter 5: Awake Before Dawn" />
-          </MainMenuPart>
-          <MainMenuPart title="Part 2: The 80's">
-            <MainMenuChapter title="Chapter 1: Neither Here nor There" />
-            <MainMenuChapter title="Chapter 2: The Road to Mount Gretna" />
-            <MainMenuChapter title="Chapter 3: Is This Thing On" />
-            <MainMenuChapter title="Chapter 4: Born That Way" />
-            <MainMenuChapter title="Chapter 5: But It's Art Show Weekend" />
-            <MainMenuChapter title="Chapter 6: Hello Old Friends" />
-            <MainMenuChapter title="Chapter 7: A Good Talking To" />
-            <MainMenuChapter title="Chapter 8: Dutch Blues and Chautauqua Rags" />
-          </MainMenuPart>
-          <MainMenuPart title="Part 3: Boston and the 90's">
-            <MainMenuChapter title="Chapter 1: Love's Illusions" />
-            <MainMenuChapter title="Chapter 2: Long Time Comin'" />
-            <MainMenuChapter title="Chapter 3: Bad Liver and a Broken Heart" />
-            <MainMenuChapter title="Chapter 4: Crescendo and Diminuendo in Booze" />
-          </MainMenuPart>
-          <MainMenuPart title="Part 4: The 00's">
-            <MainMenuChapter title="Chapter 1: The '00s Gutted" />
-            <MainMenuChapter title="Chapter 2: Before the Fall" />
-            <MainMenuChapter title="Chapter 3: Swim or Sink" />
-            <MainMenuChapter title="Chapter 4: Deeper Hole" />
-            <MainMenuChapter title="Chapter 5: No Fight Left" />
-            <MainMenuChapter title="Chapter 6: I Had No Idea" />
-          </MainMenuPart>
+          <MainMenuItem
+            title="Introduction"
+            onClick={() => console.log("TODO: go to intro")}
+          />
+
+          <MainMenuExpandable title="Part 1: The 70's">
+            <MainMenuItem
+              title="Chapter 1: Goober's Hill Blues"
+              onClick={() => console.log("TODO: go to Chapter 1")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 2: Carbondale"
+              onClick={() => console.log("TODO: go to Chapter 2")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 3: Game Changers"
+              onClick={() => console.log("TODO: go to Chapter 3")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 4: Birth of a Cynic"
+              onClick={() => console.log("TODO: go to Chapter 4")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 5: Awake Before Dawn"
+              onClick={() => console.log("TODO: go to Chapter 5")}
+              isExpandedContent={true}
+            />
+          </MainMenuExpandable>
+
+          <MainMenuExpandable title="Part 2: The 80's">
+            <MainMenuItem
+              title="Chapter 1: Neither Here nor There"
+              onClick={() => console.log("TODO: go to Chapter 1")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 2: The Road to Mount Gretna"
+              onClick={() => console.log("TODO: go to Chapter 2")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 3: Is This Thing On"
+              onClick={() => console.log("TODO: go to Chapter 3")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 4: Born That Way"
+              onClick={() => console.log("TODO: go to Chapter 4")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 5: But It's Art Show Weekend"
+              onClick={() => console.log("TODO: go to Chapter 5")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 6: Hello Old Friends"
+              onClick={() => console.log("TODO: go to Chapter 6")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 7: A Good Talking To"
+              onClick={() => console.log("TODO: go to Chapter 7")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 8: Dutch Blues and Chautauqua Rags"
+              onClick={() => console.log("TODO: go to Chapter 8")}
+              isExpandedContent={true}
+            />
+          </MainMenuExpandable>
+
+          <MainMenuExpandable title="Part 3: Boston and the 90's">
+            <MainMenuItem
+              title="Chapter 1: Love's Illusions"
+              onClick={() => console.log("TODO: go to Chapter 1")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 2: Long Time Comin'"
+              onClick={() => console.log("TODO: go to Chapter 2")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 3: Bad Liver and a Broken Heart"
+              onClick={() => console.log("TODO: go to Chapter 3")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 4: Crescendo and Diminuendo in Booze"
+              onClick={() => console.log("TODO: go to Chapter 4")}
+              isExpandedContent={true}
+            />
+          </MainMenuExpandable>
+
+          <MainMenuExpandable title="Part 4: The 00's">
+            <MainMenuItem
+              title="Chapter 1: The '00s Gutted"
+              onClick={() => console.log("TODO: go to Chapter 1")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 2: Before the Fall"
+              onClick={() => console.log("TODO: go to Chapter 2")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 3: Swim or Sink"
+              onClick={() => console.log("TODO: go to Chapter 3")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 4: Deeper Hole"
+              onClick={() => console.log("TODO: go to Chapter 4")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 5: No Fight Left"
+              onClick={() => console.log("TODO: go to Chapter 5")}
+              isExpandedContent={true}
+            />
+            <MainMenuItem
+              title="Chapter 6: I Had No Idea"
+              onClick={() => console.log("TODO: go to Chapter 6")}
+              isExpandedContent={true}
+            />
+          </MainMenuExpandable>
 
           <h2 className={styles.menuTitle}>Options</h2>
 
-          <MainMenuButton
+          <MainMenuItem
+            title="Launch Audio Player"
             onClick={() => console.log("TODO: launch audio player")}
-          >
-            Launch Audio Player
-          </MainMenuButton>
-          <MainMenuButton
+          />
+
+          <MainMenuItem
+            title="Dark Mode"
             onClick={() =>
-              console.log(
-                "TODO: dark mode switch and better MainMenuPart content"
-              )
+              console.log("TODO: dark mode switch and better title prop")
             }
-          >
-            Dark Mode
-          </MainMenuButton>
+          />
         </div>
 
         <ButtonUnstyled onClick={closeMenu} className={styles.closeButton}>

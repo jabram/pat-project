@@ -4,7 +4,7 @@ import styles from "./MenuText.module.scss";
 
 const MenuText = ({ text, className }) => {
   return (
-    <span className={`${styles.menuText}${className ? className : ""}`}>
+    <span className={`${styles.menuText} ${className ? className : ""}`}>
       {text}
     </span>
   );
