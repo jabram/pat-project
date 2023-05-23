@@ -7,9 +7,14 @@ import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 
 const MainLayout = ({ showMenu, children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
-    <div className={styles.layoutContainer}>
+    <div
+      className={`${styles.layoutContainer} ${
+        isDarkMode ? styles.darkMode : ""
+      }`}
+    >
       {showMenu && (
         <ButtonUnstyled onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <Hamburger className={styles.menuIcon} />
@@ -19,6 +24,8 @@ const MainLayout = ({ showMenu, children }) => {
       <MainMenu
         isMenuOpen={isMenuOpen}
         closeMenu={() => setIsMenuOpen(false)}
+        isDarkMode={isDarkMode}
+        toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
       />
     </div>
   );

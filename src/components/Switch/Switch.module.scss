@@ -3,7 +3,7 @@
   width: 55px;
   height: 28px;
   border-radius: 180px;
-  background: #454545; // dark mode
+  background: var(--color-toggleBackground);
   position: relative;
   cursor: pointer;
   transition: all 0.2s ease-in;
@@ -13,7 +13,7 @@
   }
 
   &.isOn {
-    background: #6b9e59; // dark mode
+    background: #6b9e59;
   }
 }
 
@@ -22,7 +22,7 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: #fff; // dark mode
+  background: var(--color-toggleHead);
   position: absolute;
   top: 5px;
   left: 5px;

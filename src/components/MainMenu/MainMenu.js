@@ -7,7 +7,7 @@ import MainMenuItem from "../MainMenuItem/MainMenuItem";
 import MainMenuExpandable from "../MainMenuExpandable/MainMenuExpandable";
 import Switch from "../Switch/Switch";
 
-const MainMenu = ({ isMenuOpen, closeMenu }) => {
+const MainMenu = ({ isMenuOpen, closeMenu, isDarkMode, toggleDarkMode }) => {
   return (
     <div
       className={`${styles.mask} ${isMenuOpen === true ? styles.visible : ""}`}
@@ -159,10 +159,8 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
 
           <MainMenuItem
             title="Dark Mode"
-            onClick={() =>
-              console.log("TODO: dark mode switch and better title prop")
-            }
-            additionalContent={<Switch />}
+            onClick={toggleDarkMode}
+            additionalContent={<Switch isOn={isDarkMode} />}
           />
         </div>
 
@@ -177,11 +175,15 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
 MainMenu.propTypes = {
   isMenuOpen: PropTypes.bool,
   closeMenu: PropTypes.func.isRequired,
+  isDarkMode: PropTypes.bool,
+  toggleDarkMode: PropTypes.func.isRequired,
 };
 
 MainMenu.defaultProps = {
   isMenuOpen: false,
   closeMenu: undefined,
+  isDarkMode: false,
+  toggleDarkMode: undefined,
 };
 
 export default MainMenu;
