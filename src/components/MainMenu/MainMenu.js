@@ -5,6 +5,7 @@ import { ReactComponent as CloseX } from "./closeX.svg";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 import MainMenuItem from "../MainMenuItem/MainMenuItem";
 import MainMenuExpandable from "../MainMenuExpandable/MainMenuExpandable";
+import Switch from "../Switch/Switch";
 
 const MainMenu = ({ isMenuOpen, closeMenu }) => {
   return (
@@ -161,6 +162,7 @@ const MainMenu = ({ isMenuOpen, closeMenu }) => {
             onClick={() =>
               console.log("TODO: dark mode switch and better title prop")
             }
+            additionalContent={<Switch />}
           />
         </div>
 
