@@ -5,9 +5,24 @@ import styles from "./MainLayout.module.scss";
 import MainMenu from "../MainMenu/MainMenu";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 
+const THEME_OPTIONS = {
+  light: "light",
+  dark: "dark",
+};
+
 const MainLayout = ({ showMenu, children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("theme") === THEME_OPTIONS.dark || false
+  );
+
+  const toggleDarkMode = () => {
+    localStorage.setItem(
+      "theme",
+      isDarkMode ? THEME_OPTIONS.light : THEME_OPTIONS.dark
+    );
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
     <div
@@ -25,7 +40,7 @@ const MainLayout = ({ showMenu, children }) => {
         isMenuOpen={isMenuOpen}
         closeMenu={() => setIsMenuOpen(false)}
         isDarkMode={isDarkMode}
-        toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
+        toggleDarkMode={toggleDarkMode}
       />
     </div>
   );
