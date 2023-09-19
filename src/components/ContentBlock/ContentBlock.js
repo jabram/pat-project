@@ -1,11 +1,12 @@
+// rename this to ContentWithPadding?
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./StoryContainer.module.scss";
+import styles from "./ContentBlock.module.scss";
 
-const StoryContainer = ({ makeRoomForMenu, children }) => {
+const ContentBlock = ({ makeRoomForMenu, children }) => {
   return (
     <div
-      className={`${styles.storyContainer} ${
+      className={`${styles.contentBlock} ${
         !makeRoomForMenu ? styles.noMenu : ""
       }`}
     >
@@ -14,14 +15,14 @@ const StoryContainer = ({ makeRoomForMenu, children }) => {
   );
 };
 
-StoryContainer.propTypes = {
+ContentBlock.propTypes = {
   makeRoomForMenu: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
 
-StoryContainer.defaultProps = {
+ContentBlock.defaultProps = {
   makeRoomForMenu: true,
   children: undefined,
 };
 
-export default StoryContainer;
+export default ContentBlock;

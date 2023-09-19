@@ -1,8 +1,8 @@
 import MainLayout from "../MainLayout/MainLayout";
-import StoryContainer from "./StoryContainer";
+import ContentBlock from "./ContentBlock";
 
 const Story = {
-  component: StoryContainer,
+  component: ContentBlock,
 };
 export default Story;
 
@@ -10,7 +10,7 @@ export const Default = {
   args: {
     children: (
       <div>
-        <p>hi story container children here</p>
+        <p>hi content block children here</p>
         <p>this component sets up the left and right padding for text blocks</p>
         <p>
           there's extra space on the right by default to accommodate the main
@@ -46,7 +46,7 @@ export const NoMenu = {
     children: (
       <div>
         <p>
-          here's a story container with no extra room at the right for the main
+          here's a content block with no extra room at the right for the main
           menu
         </p>
         <p>
@@ -78,7 +78,7 @@ export const WithinMainLayout = {
     children: (
       <MainLayout>
         <p>
-          hi story container from within a MainLayout component (including main
+          hi content block from within a MainLayout component (including main
           menu)
         </p>
         <p>

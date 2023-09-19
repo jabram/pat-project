@@ -1,7 +1,7 @@
 import React from "react";
 import Gallery from "./components/Gallery/Gallery";
 import MainLayout from "./components/MainLayout/MainLayout";
-import StoryContainer from "./components/StoryContainer/StoryContainer";
+import ContentBlock from "./components/ContentBlock/ContentBlock";
 
 const App = () => {
   const showMenu = true; // TODO: make realer
@@ -9,7 +9,7 @@ const App = () => {
   return (
     <MainLayout showMenu={showMenu}>
       <p>this is the whole main layout deal</p>
-      <StoryContainer makeRoomForMenu={showMenu}>
+      <ContentBlock makeRoomForMenu={showMenu}>
         <p>here's a story</p>
         <p>
           Culpa fugiat ad tempor dolor enim anim quis voluptate qui consequat
@@ -149,9 +149,9 @@ const App = () => {
           Aliqua sunt consectetur magna sint aute tempor officia. In anim non
           consequat et occaecat amet irure magna dolor occaecat exercitation.
         </p>
-      </StoryContainer>
+      </ContentBlock>
       <Gallery />
-      <StoryContainer showMenu={true}>
+      <ContentBlock showMenu={true}>
         <p>here's another story</p>
         <p>
           Exercitation sint consequat Lorem ex duis minim sunt eu laborum magna
@@ -188,7 +188,7 @@ const App = () => {
           exercitation tempor occaecat proident quis proident. Nulla duis do do
           exercitation excepteur dolor.
         </p>
-      </StoryContainer>
+      </ContentBlock>
     </MainLayout>
   );
 };
