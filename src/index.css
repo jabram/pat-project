@@ -1,0 +1,39 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+p {
+  font-size: 2.2rem;
+  line-height: 1.36;
+  margin: 0 0 3rem;
+}
+
+svg {
+  font-size: 2.2rem;
+}
+
+@font-face {
+  font-family: "DIN Condensed Bold";
+  src: local("DIN Condensed Bold"),
+    url("./fonts/DIN Condensed Bold.ttf") format("truetype");
+  font-weight: bold;
+}

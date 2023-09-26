@@ -1,0 +1,34 @@
+.switchContainer {
+  display: block;
+  width: 55px;
+  height: 28px;
+  border-radius: 180px;
+  background: var(--color-toggleBackground);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &.isOn {
+    background: #6b9e59;
+  }
+}
+
+.switchHead {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-toggleHead);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: all 0.2s ease-in;
+
+  .isOn & {
+    left: 32px;
+  }
+}

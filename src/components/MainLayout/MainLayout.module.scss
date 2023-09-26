@@ -1,0 +1,37 @@
+.layoutContainer {
+  min-height: 100vh;
+  position: relative;
+  padding: 6rem 0 16rem 0;
+  background: #fff;
+  color: #454545;
+  --color-text: #454545;
+  --color-background: #e5e5e5;
+  --color-buttonBackground: #454545;
+  --color-menuBackground: #fff;
+  --color-menuBorder: #454545;
+  --color-menuHeader: #454545;
+  --color-menuHeaderText: #fff;
+  --color-toggleBackground: #454545;
+  --color-toggleHead: #fff;
+
+  &.darkMode {
+    background: #262626;
+    color: #fff;
+    --color-text: #fff;
+    --color-background: #262626;
+    --color-buttonBackground: #000;
+    --color-menuBackground: #000;
+    --color-menuBorder: #666;
+    --color-menuHeader: #4d4d4d;
+    --color-menuHeaderText: #fff;
+    --color-toggleBackground: #6b9e59;
+    --color-toggleHead: #000;
+  }
+}
+
+.menuIcon {
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+  font-size: 3rem;
+}
