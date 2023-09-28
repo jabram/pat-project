@@ -1,0 +1,10 @@
+.buttonSecondary {
+  composes: unstyledButton from "../ButtonUnstyled/ButtonUnstyled.module.scss";
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  background: var(--color-buttonBackgroundAlt);
+}
+
+.wideButton {
+  width: 500px;
+}
