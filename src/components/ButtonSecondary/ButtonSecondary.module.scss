@@ -1,5 +1,6 @@
 .buttonSecondary {
-  composes: unstyledButton from "../ButtonUnstyled/ButtonUnstyled.module.scss";
+  composes: primaryButton from "../ButtonPrimary/ButtonPrimary.module.scss";
+  font-family: "DIN Condensed Bold";
   color: var(--color-text);
   border: 1px solid var(--color-text);
   background: var(--color-buttonBackgroundAlt);

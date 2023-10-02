@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import styles from "./MainMenuExpandable.module.scss";
-import { ReactComponent as CaretUp } from "./caretUp.svg";
-import { ReactComponent as CaretDown } from "./caretDown.svg";
+import { ReactComponent as CaretUp } from "../../icons/caretUp.svg";
+import { ReactComponent as CaretDown } from "../../icons/caretDown.svg";
 import MenuText from "../MenuText/MenuText";
 import MainMenuButton from "../MainMenuButton/MainMenuButton";
 
@@ -11,7 +11,7 @@ const MainMenuExpandable = ({ title, children }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className={styles.section}>
+    <section className={styles.section}>
       <MainMenuButton onClick={() => setIsExpanded(!isExpanded)}>
         <MenuText className={styles.titleText} text={title} />
         {isExpanded ? <CaretUp /> : <CaretDown />}
@@ -27,7 +27,7 @@ const MainMenuExpandable = ({ title, children }) => {
       >
         {children}
       </motion.div>
-    </div>
+    </section>
   );
 };
 

@@ -14,6 +14,7 @@
   --color-menuHeaderText: #fff;
   --color-toggleBackground: #454545;
   --color-toggleHead: #fff;
+  --color-expandedBackground: #e7e7e7;
 
   &.darkMode {
     background: #262626;
@@ -28,6 +29,7 @@
     --color-menuHeaderText: #fff;
     --color-toggleBackground: #6b9e59;
     --color-toggleHead: #000;
+    --color-expandedBackground: #000;
   }
 }
 

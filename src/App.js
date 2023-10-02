@@ -2,6 +2,7 @@ import React from "react";
 import Gallery from "./components/Gallery/Gallery";
 import MainLayout from "./components/MainLayout/MainLayout";
 import ContentBlock from "./components/ContentBlock/ContentBlock";
+import ExpandableBlock from "./components/ExpandableBlock/ExpandableBlock";
 
 const App = () => {
   const showMenu = true; // TODO: make realer
@@ -150,7 +151,10 @@ const App = () => {
           consequat et occaecat amet irure magna dolor occaecat exercitation.
         </p>
       </ContentBlock>
-      <Gallery />
+      <ExpandableBlock>
+        <p>the gallery will go in here:</p>
+        <Gallery />
+      </ExpandableBlock>
       <ContentBlock showMenu={true}>
         <p>here's another story</p>
         <p>
