@@ -55,7 +55,8 @@ const Gallery = ({ slides }) => {
             <motion.img
               className={styles.image}
               key={slide}
-              src={slides[slideIndex]}
+              src={slides[slideIndex].url}
+              alt={slides[slideIndex].alt}
               custom={direction}
               variants={variants}
               initial="enter"
@@ -93,7 +94,7 @@ const Gallery = ({ slides }) => {
       <div className={styles.thumbnailContainer}>
         {slides.map((slide, i) => (
           <ButtonUnstyled key={i} onClick={() => slideIt(i - slideIndex)}>
-            <img src={slide} />
+            <img src={slide.url} alt={slide.alt} />
           </ButtonUnstyled>
         ))}
       </div>
@@ -102,7 +103,13 @@ const Gallery = ({ slides }) => {
 };
 
 Gallery.propTypes = {
-  slides: PropTypes.arrayOf(PropTypes.string).isRequired,
+  slides: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+      isVideo: PropTypes.bool,
+    })
+  ).isRequired,
 };
 
 Gallery.defaultProps = {
