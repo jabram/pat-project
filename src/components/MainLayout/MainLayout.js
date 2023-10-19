@@ -31,7 +31,10 @@ const MainLayout = ({ showMenu, children }) => {
       }`}
     >
       {showMenu && (
-        <ButtonUnstyled onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <ButtonUnstyled
+          className={styles.menuButton}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
           <Hamburger className={styles.menuIcon} />
         </ButtonUnstyled>
       )}

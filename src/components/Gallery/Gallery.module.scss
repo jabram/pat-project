@@ -1,28 +1,49 @@
-@import "../../config/colors.scss";
+.galleryContainer {
+  margin: 3rem 8rem;
+}
 
-.container {
+.slideContainer {
   position: relative;
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9;
+  }
 }
 
-.topper,
-.bottom {
-  width: 100%;
-  height: 30px;
+.animationContainer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  height: 100%;
   position: absolute;
-  left: 0;
 }
 
-.topper {
-  top: 0;
-  box-shadow: 0px 4px 25px $grayLightShadow;
+.leftButt {
+  left: -5rem;
 }
 
-.bottom {
-  bottom: 0;
-  box-shadow: 0px -4px 25px $grayLightShadow;
+.rightButt {
+  right: -5rem;
 }
 
-.gallery {
-  padding: 50px 20px;
-  background: $grayLight;
+.thumbnailContainer {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5rem;
+
+  button,
+  img {
+    height: 100%;
+  }
 }

@@ -151,9 +151,14 @@ const App = () => {
           consequat et occaecat amet irure magna dolor occaecat exercitation.
         </p>
       </ContentBlock>
-      <ExpandableBlock>
-        <p>the gallery will go in here:</p>
-        <Gallery />
+      <ExpandableBlock title="Part 1, Chapter 1 Lyrics & Media">
+        <Gallery
+          slides={[
+            "https://firebasestorage.googleapis.com/v0/b/pat-project-ddfee.appspot.com/o/test1.png?alt=media&token=15f52b19-cd95-4278-b40c-2f21dc68883c&_gl=1*kmmloc*_ga*MTY5MTE0NjczOC4xNjc5NTk0ODMw*_ga_CW55HF8NVT*MTY5NzEyMDMyNS45NS4xLjE2OTcxMjA1OTUuMTcuMC4w",
+            "https://firebasestorage.googleapis.com/v0/b/pat-project-ddfee.appspot.com/o/test2.png?alt=media&token=40308ede-2153-491f-94c6-6afe478ed310&_gl=1*mjekee*_ga*MTY5MTE0NjczOC4xNjc5NTk0ODMw*_ga_CW55HF8NVT*MTY5NzEyMDMyNS45NS4xLjE2OTcxMjA2MDguNC4wLjA.",
+            "https://firebasestorage.googleapis.com/v0/b/pat-project-ddfee.appspot.com/o/test3.png?alt=media&token=7e03fd4f-ea4b-4952-9a46-0f8b3a6b01ab&_gl=1*1e6t4qm*_ga*MTY5MTE0NjczOC4xNjc5NTk0ODMw*_ga_CW55HF8NVT*MTY5NzEyMDMyNS45NS4xLjE2OTcxMjA1NTIuNjAuMC4w",
+          ]}
+        />
       </ExpandableBlock>
       <ContentBlock showMenu={true}>
         <p>here's another story</p>

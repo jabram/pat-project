@@ -33,6 +33,11 @@
   }
 }
 
+.menuButton {
+  position: relative;
+  z-index: 99;
+}
+
 .menuIcon {
   position: fixed;
   top: 5rem;
