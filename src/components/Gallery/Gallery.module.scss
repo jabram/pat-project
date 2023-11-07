@@ -21,9 +21,15 @@
   overflow: hidden;
 }
 
-.image {
+.slide {
   height: 100%;
   position: absolute;
+
+  img,
+  iframe,
+  > div {
+    height: 100%;
+  }
 }
 
 .leftButt {

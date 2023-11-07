@@ -11,6 +11,7 @@ import styles from "./Gallery.module.scss";
 import { ReactComponent as CaretLeft } from "../../icons/caretLeft.svg";
 import { ReactComponent as CaretRight } from "../../icons/caretRight.svg";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
+import YouTube from "react-youtube";
 
 const swipeConfidenceThreshold = 10000;
 
@@ -52,11 +53,9 @@ const Gallery = ({ slides }) => {
       <div className={styles.slideContainer}>
         <div className={styles.animationContainer}>
           <AnimatePresence initial={false} custom={direction}>
-            <motion.img
-              className={styles.image}
+            <motion.div
+              className={styles.slide}
               key={slide}
-              src={slides[slideIndex].url}
-              alt={slides[slideIndex].alt}
               custom={direction}
               variants={variants}
               initial="enter"
@@ -78,7 +77,16 @@ const Gallery = ({ slides }) => {
                   slideIt(-1);
                 }
               }}
-            />
+            >
+              {slides[slideIndex].youtubeId ? (
+                <YouTube videoId={slides[slideIndex].youtubeId} />
+              ) : (
+                <img
+                  src={slides[slideIndex].url}
+                  alt={slides[slideIndex].alt}
+                />
+              )}
+            </motion.div>
           </AnimatePresence>
         </div>
         <ButtonUnstyled className={styles.leftButt} onClick={() => slideIt(1)}>
