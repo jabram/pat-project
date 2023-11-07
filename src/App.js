@@ -1,15 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
+import styles from "./App.module.scss";
 import Gallery from "./components/Gallery/Gallery";
-import MainLayout from "./components/MainLayout/MainLayout";
 import ContentBlock from "./components/ContentBlock/ContentBlock";
 import ExpandableBlock from "./components/ExpandableBlock/ExpandableBlock";
+import { THEME_OPTIONS } from "./config/constants";
+import ButtonUnstyled from "./components/ButtonUnstyled/ButtonUnstyled";
+import { ReactComponent as Hamburger } from "./icons/hamburger.svg";
+import MainMenu from "./components/MainMenu/MainMenu";
+import Section from "./components/Section/Section";
 
 const App = () => {
-  const showMenu = true; // TODO: make realer
+  const [showMenu, setShowMenu] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("theme") === THEME_OPTIONS.dark || false
+  );
+
+  const toggleDarkMode = () => {
+    localStorage.setItem(
+      "theme",
+      isDarkMode ? THEME_OPTIONS.light : THEME_OPTIONS.dark
+    );
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
-    <>
-      <MainLayout showMenu={showMenu} id="intro">
+    <div
+      className={`${styles.layoutContainer} ${
+        isDarkMode ? styles.darkMode : ""
+      }`}
+    >
+      {showMenu && (
+        <ButtonUnstyled
+          className={styles.menuButton}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Hamburger className={styles.menuIcon} />
+        </ButtonUnstyled>
+      )}
+
+      <Section id="intro">
         <p>this is the whole main layout deal</p>
         <ContentBlock makeRoomForMenu={showMenu}>
           <h2>Intro</h2>
@@ -214,26 +244,33 @@ const App = () => {
             do exercitation excepteur dolor.
           </p>
         </ContentBlock>
-      </MainLayout>
+      </Section>
 
-      <MainLayout showMenu={false} id="section1-1">
+      <Section id="section1-1">
         <ContentBlock makeRoomForMenu={true}>
           <h2>Chapter 1: Goober's Hill Blues</h2>
         </ContentBlock>
-      </MainLayout>
+      </Section>
 
-      <MainLayout showMenu={false} id="section1-2">
+      <Section id="section1-2">
         <ContentBlock makeRoomForMenu={true}>
           <h2>Chapter 2: Carbondale</h2>
         </ContentBlock>
-      </MainLayout>
+      </Section>
 
-      <MainLayout showMenu={true} id="section1-3">
+      <Section id="section1-3">
         <ContentBlock false={true}>
           <h2>Chapter 3: Game Changers</h2>
         </ContentBlock>
-      </MainLayout>
-    </>
+      </Section>
+
+      <MainMenu
+        isMenuOpen={isMenuOpen}
+        closeMenu={() => setIsMenuOpen(false)}
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
+    </div>
   );
 };
 

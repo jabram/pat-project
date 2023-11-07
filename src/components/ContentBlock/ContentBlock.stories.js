@@ -1,4 +1,4 @@
-import MainLayout from "../MainLayout/MainLayout";
+import Section from "../Section/Section";
 import ContentBlock from "./ContentBlock";
 
 const Story = {
@@ -73,13 +73,12 @@ export const NoMenu = {
   },
 };
 
-export const WithinMainLayout = {
+export const WithinSection = {
   args: {
     children: (
-      <MainLayout>
+      <Section>
         <p>
-          hi content block from within a MainLayout component (including main
-          menu)
+          hi content block from within a Section component (including main menu)
         </p>
         <p>
           Elit do sit exercitation veniam amet aliquip voluptate magna
@@ -124,7 +123,7 @@ export const WithinMainLayout = {
         <p>
           Quis tempor exercitation cillum cupidatat laboris ipsum eiusmod ea.
         </p>
-      </MainLayout>
+      </Section>
     ),
   },
 };

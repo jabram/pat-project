@@ -1,5 +1,5 @@
 import ButtonUnstyled from "./ButtonUnstyled";
-import { ReactComponent as Hamburger } from "../MainLayout/hamburger.svg";
+import { ReactComponent as Hamburger } from "../../icons/hamburger.svg";
 
 const Story = {
   component: ButtonUnstyled,
