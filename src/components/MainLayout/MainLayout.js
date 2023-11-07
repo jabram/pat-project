@@ -10,7 +10,7 @@ const THEME_OPTIONS = {
   dark: "dark",
 };
 
-const MainLayout = ({ showMenu, children }) => {
+const MainLayout = ({ id, showMenu, children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === THEME_OPTIONS.dark || false
@@ -26,6 +26,7 @@ const MainLayout = ({ showMenu, children }) => {
 
   return (
     <div
+      id={id}
       className={`${styles.layoutContainer} ${
         isDarkMode ? styles.darkMode : ""
       }`}
@@ -50,11 +51,13 @@ const MainLayout = ({ showMenu, children }) => {
 };
 
 MainLayout.propTypes = {
+  id: PropTypes.string,
   showMenu: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
 
 MainLayout.defaultProps = {
+  id: undefined,
   showMenu: true,
   children: undefined,
 };

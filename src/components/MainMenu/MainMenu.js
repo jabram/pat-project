@@ -8,6 +8,12 @@ import MainMenuExpandable from "../MainMenuExpandable/MainMenuExpandable";
 import Switch from "../Switch/Switch";
 
 const MainMenu = ({ isMenuOpen, closeMenu, isDarkMode, toggleDarkMode }) => {
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: "smooth" });
+    closeMenu();
+  };
+
   return (
     <div
       className={`${styles.mask} ${isMenuOpen === true ? styles.visible : ""}`}
@@ -20,23 +26,23 @@ const MainMenu = ({ isMenuOpen, closeMenu, isDarkMode, toggleDarkMode }) => {
 
           <MainMenuItem
             title="Introduction"
-            onClick={() => console.log("TODO: go to intro")}
+            onClick={() => scrollToSection("intro")}
           />
 
           <MainMenuExpandable title="Part 1: The 70's">
             <MainMenuItem
               title="Chapter 1: Goober's Hill Blues"
-              onClick={() => console.log("TODO: go to Chapter 1")}
+              onClick={() => scrollToSection("section1-1")}
               isExpandedContent={true}
             />
             <MainMenuItem
               title="Chapter 2: Carbondale"
-              onClick={() => console.log("TODO: go to Chapter 2")}
+              onClick={() => scrollToSection("section1-2")}
               isExpandedContent={true}
             />
             <MainMenuItem
               title="Chapter 3: Game Changers"
-              onClick={() => console.log("TODO: go to Chapter 3")}
+              onClick={() => scrollToSection("section1-3")}
               isExpandedContent={true}
             />
             <MainMenuItem
