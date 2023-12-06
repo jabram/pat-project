@@ -1,0 +1,69 @@
+.verticalFlex {
+  display: flex;
+  align-items: center;
+}
+
+.titleContentBlock {
+  padding: 0 calc(5rem + 40px + 5rem) 0 5rem; // NOTE: calc is width of hamburger plus left spacing plus standard 50
+}
+
+.h1 {
+  font-size: 14.4rem;
+  line-height: 13.2rem;
+  margin: 0;
+}
+
+.sub {
+  display: block;
+  font-size: 11.4rem;
+}
+
+.h2 {
+  font-size: 9.4rem;
+  line-height: 13.2rem;
+  font-weight: 400;
+  font-style: italic;
+  margin: 0;
+}
+
+/* step down header font sizes for smaller screens */
+@media (max-width: 1500px) {
+  .h1 {
+    font-size: 12.4rem;
+    line-height: 11.2rem;
+  }
+
+  .sub {
+    font-size: 9.4rem;
+  }
+
+  .h2 {
+    font-size: 7.4rem;
+    line-height: 11.2rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .h1 {
+    font-size: 10.4rem;
+    line-height: 9.2rem;
+  }
+
+  .sub {
+    font-size: 7.4rem;
+  }
+
+  .h2 {
+    font-size: 5.4rem;
+    line-height: 9.2rem;
+  }
+}
+
+.patHeader {
+  margin-top: 5rem;
+  font-size: 3.4rem;
+
+  @media (max-width: 1500px) {
+    font-size: 2.8rem;
+  }
+}
