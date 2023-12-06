@@ -54,7 +54,9 @@ const Gallery = ({ slides }) => {
         <div className={styles.animationContainer}>
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
-              className={styles.slide}
+              className={`${styles.slide} ${
+                slides[slideIndex].youtubeId ? "" : styles.flexSlide
+              }`}
               key={slide}
               custom={direction}
               variants={variants}
@@ -115,7 +117,7 @@ Gallery.propTypes = {
     PropTypes.shape({
       url: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
-      isVideo: PropTypes.bool,
+      youtubeId: PropTypes.string,
     })
   ).isRequired,
 };
