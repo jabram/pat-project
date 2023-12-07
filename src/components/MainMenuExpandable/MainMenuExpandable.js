@@ -21,7 +21,7 @@ const MainMenuExpandable = ({ title, children }) => {
         initial="collapsed"
         animate={isExpanded ? "expanded" : "collapsed"}
         variants={{
-          expanded: { height: "auto", padding: "1rem 0 2rem" },
+          expanded: { height: "auto", padding: "0 0 2rem" },
           collapsed: { height: 0, padding: 0 },
         }}
       >

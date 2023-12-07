@@ -4,6 +4,7 @@
 }
 
 .innerItem {
+  composes: menuButton from "../MainMenuButton/MainMenuButton.module.scss";
   border-bottom: none;
   padding: 1rem 6rem;
 }
