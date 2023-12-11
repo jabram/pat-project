@@ -4,16 +4,9 @@ import ExpandableBlock from "../ExpandableBlock/ExpandableBlock";
 import SingleMedia from "../SingleMedia/SingleMedia";
 import Gallery from "../Gallery/Gallery";
 
-const displayFriendlyTitle = (id) => {
-  const sections = id.split("-");
-  const part = sections[0].slice(-1);
-  const chapter = sections[1].slice(-1);
-  return `Part ${part}, Chapter ${chapter} Lyrics & Media`;
-};
-
 const Slides = ({ id, slides }) => {
   return (
-    <ExpandableBlock title={displayFriendlyTitle(id)}>
+    <ExpandableBlock title="Lyrics & Media">
       {slides.length === 1 ? (
         <SingleMedia
           url={slides[0].url}

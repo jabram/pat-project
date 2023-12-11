@@ -6,6 +6,7 @@
 }
 
 .toggleButton {
+  text-transform: uppercase;
   position: absolute;
   left: 50%;
   top: 0;
@@ -15,6 +16,10 @@
 
   &.closed {
     top: 8px;
+  }
+
+  > svg {
+    margin-bottom: 8px;
   }
 }
 
