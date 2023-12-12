@@ -12,6 +12,7 @@ import { ReactComponent as CaretLeft } from "../../icons/caretLeft.svg";
 import { ReactComponent as CaretRight } from "../../icons/caretRight.svg";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 import YouTube from "react-youtube";
+import Caption from "../Caption/Caption";
 
 const swipeConfidenceThreshold = 10000;
 
@@ -54,9 +55,7 @@ const Gallery = ({ slides }) => {
         <div className={styles.animationContainer}>
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
-              className={`${styles.slide} ${
-                slides[slideIndex].youtubeId ? "" : styles.flexSlide
-              }`}
+              className={styles.slide}
               key={slide}
               custom={direction}
               variants={variants}
@@ -80,14 +79,23 @@ const Gallery = ({ slides }) => {
                 }
               }}
             >
-              {slides[slideIndex].youtubeId ? (
-                <YouTube videoId={slides[slideIndex].youtubeId} />
-              ) : (
-                <img
-                  src={slides[slideIndex].url}
-                  alt={slides[slideIndex].alt}
-                />
-              )}
+              <div className={styles.mediaContainer}>
+                <div
+                  className={`${styles.media} ${
+                    slides[slideIndex].youtubeId ? "" : styles.flexMedia
+                  }`}
+                >
+                  {slides[slideIndex].youtubeId ? (
+                    <YouTube videoId={slides[slideIndex].youtubeId} />
+                  ) : (
+                    <img
+                      src={slides[slideIndex].url}
+                      alt={slides[slideIndex].alt}
+                    />
+                  )}
+                </div>
+              </div>
+              <Caption text={slides[slideIndex].alt} />
             </motion.div>
           </AnimatePresence>
         </div>

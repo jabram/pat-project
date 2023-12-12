@@ -2,15 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./SingleMedia.module.scss";
 import YouTube from "react-youtube";
+import Caption from "../Caption/Caption";
 
 const SingleMedia = ({ url, alt, youtubeId }) => {
   return (
-    <div className={styles.mediaContainer}>
-      {youtubeId ? (
-        <YouTube videoId={youtubeId} />
-      ) : (
-        <img className={styles.image} src={url} alt={alt} />
-      )}
+    <div>
+      <div className={styles.mediaContainer}>
+        <div className={`${styles.media} ${youtubeId ? "" : styles.flexMedia}`}>
+          {youtubeId ? (
+            <YouTube videoId={youtubeId} />
+          ) : (
+            <img src={url} alt={alt} />
+          )}
+        </div>
+      </div>
+      <Caption text={alt} />
     </div>
   );
 };

@@ -16,7 +16,7 @@
 .animationContainer {
   display: flex;
   justify-content: center;
-  padding-bottom: 56.25%;
+  padding-bottom: calc(56.25% + 67px); // px is the height of 3 caption lines
   position: relative;
   overflow: hidden;
 }
@@ -25,22 +25,34 @@
   width: 100%;
   height: 100%;
   position: absolute;
+}
 
-  img,
-  iframe,
-  > div {
-    height: 100%;
-  }
+.mediaContainer {
+  padding-bottom: 56.25%;
+  height: 0;
+  position: relative;
+}
 
+.media {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  > div,
   iframe {
     width: 100%;
+    height: 100%;
   }
 }
 
-.flexSlide {
+.flexMedia {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  img {
+    height: 100%;
+  }
 }
 
 .leftButt {
@@ -57,7 +69,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 5rem;
+  margin-top: 3.2rem;
 
   button,
   img {

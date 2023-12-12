@@ -1,12 +1,27 @@
 .mediaContainer {
-  display: flex;
-  justify-content: center;
   padding-bottom: 56.25%;
   margin: 3rem 8rem;
   position: relative;
 }
 
-.image {
-  height: 100%;
+.media {
   position: absolute;
+  width: 100%;
+  height: 100%;
+
+  > div,
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.flexMedia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 100%;
+  }
 }
