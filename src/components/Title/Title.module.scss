@@ -5,6 +5,7 @@
 
 .titleContentBlock {
   padding: 0 calc(5rem + 40px + 5rem) 0 5rem; // NOTE: calc is width of hamburger plus left spacing plus standard 50
+  max-width: none;
 }
 
 .h1 {

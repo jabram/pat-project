@@ -1,5 +1,7 @@
 .contentBlock {
   padding: 0 calc(5rem + 40px + 5rem); // NOTE: calc is width of hamburger plus left spacing plus standard 50
+  max-width: calc(1000px + 10rem + 40px + 10rem + 40px);
+  margin: 0 auto;
 
   &.noMenu {
     padding-right: 5rem;
