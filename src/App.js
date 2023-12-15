@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import { getMainContent } from "./firebase";
 import styles from "./App.module.scss";
 import { FIREBASE_DOC_ORDER, THEME_OPTIONS } from "./config/constants";
-import ButtonUnstyled from "./components/ButtonUnstyled/ButtonUnstyled";
-import { ReactComponent as Hamburger } from "./icons/hamburger.svg";
 import MainMenu from "./components/MainMenu/MainMenu";
 import Title from "./components/Title/Title";
 import Document from "./components/Document/Document";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const [mainContent, setMainContent] = useState(null);
@@ -42,14 +41,11 @@ const App = () => {
         isDarkMode ? styles.darkMode : ""
       }`}
     >
-      {showMenu && (
-        <ButtonUnstyled
-          className={styles.menuButton}
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <Hamburger className={styles.menuIcon} />
-        </ButtonUnstyled>
-      )}
+      <Header
+        showMenu={showMenu}
+        toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
+        chapterTitle="TODO: Chapter Title Here"
+      />
 
       <Title />
 
