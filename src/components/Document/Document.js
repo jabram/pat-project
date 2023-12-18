@@ -8,9 +8,9 @@ import Slides from "../Slides/Slides";
 
 // This component displays data from Firebase Documents
 // Could contain arrays for titles and contentBlocks
-const Document = ({ id, data }) => {
+const Document = ({ id, data, setNewChapter }) => {
   return (
-    <Section id={id}>
+    <Section id={id} setNewChapter={setNewChapter}>
       {data ? (
         <>
           {data.titles && (
@@ -67,11 +67,13 @@ Document.propTypes = {
       })
     ),
   }),
+  setNewChapter: PropTypes.func,
 };
 
 Document.defaultProps = {
   id: undefined,
   data: undefined,
+  setNewChapter: undefined,
 };
 
 export default Document;

@@ -1,10 +1,15 @@
+import PropTypes from "prop-types";
 import ContentBlock from "../ContentBlock/ContentBlock";
 import Section from "../Section/Section";
 import styles from "./Title.module.scss";
 
-const Title = () => {
+const Title = ({ setNewChapter }) => {
   return (
-    <Section className={styles.verticalFlex}>
+    <Section
+      className={styles.verticalFlex}
+      id="title"
+      setNewChapter={setNewChapter}
+    >
       <ContentBlock className={styles.titleContentBlock}>
         <h1 className={styles.h1}>
           Sad Celebrations{" "}
@@ -15,6 +20,14 @@ const Title = () => {
       </ContentBlock>
     </Section>
   );
+};
+
+Title.propTypes = {
+  setNewChapter: PropTypes.func,
+};
+
+Title.defaultProps = {
+  setNewChapter: undefined,
 };
 
 export default Title;

@@ -27,7 +27,7 @@ const Header = ({ showMenu, toggleMenu, chapterTitle }) => {
 Header.propTypes = {
   showMenu: PropTypes.bool,
   toggleMenu: PropTypes.func.isRequired,
-  chapterTitle: PropTypes.string.isRequired,
+  chapterTitle: PropTypes.string,
 };
 
 Header.defaultProps = {

@@ -6,14 +6,27 @@ import MainMenu from "./components/MainMenu/MainMenu";
 import Title from "./components/Title/Title";
 import Document from "./components/Document/Document";
 import Header from "./components/Header/Header";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
+  const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(null);
   const [mainContent, setMainContent] = useState(null);
   const [showMenu] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem("theme") === THEME_OPTIONS.dark || false
   );
+
+  // updates the route when currentIndex is updated
+  useEffect(() => {
+    const newId = FIREBASE_DOC_ORDER[currentIndex];
+    if (newId) {
+      navigate(`#${newId}`);
+    } else {
+      navigate(); // root route, for title component
+    }
+  }, [currentIndex, navigate]);
 
   useEffect(() => {
     fetchContent().then((response) => setMainContent(response));
@@ -35,6 +48,12 @@ const App = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  const getChapterTitle = () => {
+    const currentId = FIREBASE_DOC_ORDER[currentIndex];
+    const titles = mainContent?.[currentId]?.titles;
+    return titles ? titles[0] : null;
+  };
+
   return (
     <div
       className={`${styles.layoutContainer} ${
@@ -44,13 +63,18 @@ const App = () => {
       <Header
         showMenu={showMenu}
         toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
-        chapterTitle="TODO: Chapter Title Here"
+        chapterTitle={getChapterTitle()}
       />
 
-      <Title />
+      <Title setNewChapter={() => setCurrentIndex(null)} />
 
-      {FIREBASE_DOC_ORDER.map((docId) => (
-        <Document key={docId} id={docId} data={mainContent?.[docId] || null} />
+      {FIREBASE_DOC_ORDER.map((docId, index) => (
+        <Document
+          key={docId}
+          id={docId}
+          data={mainContent?.[docId] || null}
+          setNewChapter={() => setCurrentIndex(index)}
+        />
       ))}
 
       <MainMenu
