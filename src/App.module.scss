@@ -31,3 +31,30 @@
     --color-expandedBackground: #000;
   }
 }
+
+.navButton {
+  position: fixed;
+  bottom: 2rem;
+  max-width: min(30%, 300px);
+  transition: all 0.2s ease-in;
+
+  div {
+    text-align: left;
+  }
+
+  span {
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.previousChapter {
+  left: 2rem;
+}
+
+.nextChapter {
+  right: 2rem;
+}

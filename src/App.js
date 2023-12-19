@@ -7,6 +7,9 @@ import Title from "./components/Title/Title";
 import Document from "./components/Document/Document";
 import Header from "./components/Header/Header";
 import { useNavigate } from "react-router-dom";
+import ButtonPrimary from "./components/ButtonPrimary/ButtonPrimary";
+import { ReactComponent as CaretUp } from "./icons/caretUp.svg";
+import { ReactComponent as CaretDown } from "./icons/caretDown.svg";
 
 const App = () => {
   const navigate = useNavigate();
@@ -48,10 +51,16 @@ const App = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const getChapterTitle = () => {
-    const currentId = FIREBASE_DOC_ORDER[currentIndex];
+  const getChapterTitle = (index) => {
+    const currentId = FIREBASE_DOC_ORDER[index];
     const titles = mainContent?.[currentId]?.titles;
     return titles ? titles[0] : null;
+  };
+
+  const scrollToIndex = (newIndex) => {
+    const chapterId = FIREBASE_DOC_ORDER[newIndex];
+    const chapter = document.getElementById(chapterId);
+    chapter.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -63,7 +72,7 @@ const App = () => {
       <Header
         showMenu={showMenu}
         toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
-        chapterTitle={getChapterTitle()}
+        chapterTitle={getChapterTitle(currentIndex)}
       />
 
       <Title setNewChapter={() => setCurrentIndex(null)} />
@@ -76,6 +85,32 @@ const App = () => {
           setNewChapter={() => setCurrentIndex(index)}
         />
       ))}
+
+      {currentIndex > 0 && (
+        <ButtonPrimary
+          className={`${styles.navButton} ${styles.previousChapter}`}
+          onClick={() => scrollToIndex(currentIndex - 1)}
+        >
+          <div>
+            <span>Previous:</span>
+            <p>{getChapterTitle(currentIndex - 1)}</p>
+          </div>
+          <CaretUp />
+        </ButtonPrimary>
+      )}
+
+      {currentIndex < FIREBASE_DOC_ORDER.length - 1 && (
+        <ButtonPrimary
+          className={`${styles.navButton} ${styles.nextChapter}`}
+          onClick={() => scrollToIndex(currentIndex + 1)}
+        >
+          <div>
+            <span>Up Next:</span>
+            <p>{getChapterTitle(currentIndex + 1)}</p>
+          </div>
+          <CaretDown />
+        </ButtonPrimary>
+      )}
 
       <MainMenu
         isMenuOpen={isMenuOpen}
