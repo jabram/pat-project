@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { initializeFirestore, collection, getDocs } from "firebase/firestore";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
 const firebaseConfig = {
@@ -13,7 +13,9 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseApp);
+const db = initializeFirestore(firebaseApp, {
+  experimentalForceLongPolling: true,
+});
 const storage = getStorage();
 
 export const getMainContent = async () => {
