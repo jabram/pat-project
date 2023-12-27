@@ -35,6 +35,7 @@
 .navButton {
   position: fixed;
   bottom: 2rem;
+  z-index: 99;
   max-width: min(30%, 300px);
   transition: all 0.2s ease-in;
 
