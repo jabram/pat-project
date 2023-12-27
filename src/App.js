@@ -86,7 +86,7 @@ const App = () => {
         />
       ))}
 
-      {currentIndex > 0 && (
+      {currentIndex > 0 && !!getChapterTitle(currentIndex - 1) && (
         <ButtonPrimary
           className={`${styles.navButton} ${styles.previousChapter}`}
           onClick={() => scrollToIndex(currentIndex - 1)}
@@ -99,18 +99,19 @@ const App = () => {
         </ButtonPrimary>
       )}
 
-      {currentIndex < FIREBASE_DOC_ORDER.length - 1 && (
-        <ButtonPrimary
-          className={`${styles.navButton} ${styles.nextChapter}`}
-          onClick={() => scrollToIndex(currentIndex + 1)}
-        >
-          <div>
-            <span>Up Next:</span>
-            <p>{getChapterTitle(currentIndex + 1)}</p>
-          </div>
-          <CaretDown />
-        </ButtonPrimary>
-      )}
+      {currentIndex < FIREBASE_DOC_ORDER.length - 1 &&
+        !!getChapterTitle(currentIndex + 1) && (
+          <ButtonPrimary
+            className={`${styles.navButton} ${styles.nextChapter}`}
+            onClick={() => scrollToIndex(currentIndex + 1)}
+          >
+            <div>
+              <span>Up Next:</span>
+              <p>{getChapterTitle(currentIndex + 1)}</p>
+            </div>
+            <CaretDown />
+          </ButtonPrimary>
+        )}
 
       <MainMenu
         isMenuOpen={isMenuOpen}
