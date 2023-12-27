@@ -17,8 +17,12 @@ const MainMenu = ({ isMenuOpen, closeMenu, isDarkMode, toggleDarkMode }) => {
   return (
     <div
       className={`${styles.mask} ${isMenuOpen === true ? styles.visible : ""}`}
+      onClick={closeMenu}
     >
-      <div className={styles.menuContainer}>
+      <div
+        className={styles.menuContainer}
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className={styles.menuContent}>
           <h2 className={`${styles.menuTitle} ${styles.header}`}>
             Table of Contents
