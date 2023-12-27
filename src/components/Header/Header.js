@@ -39,7 +39,7 @@ const Header = ({ showMenu, toggleMenu, chapterTitle }) => {
     if (!chapterTitle) {
       return "hidden";
     }
-    if (scrollDirection === "down") {
+    if (scrollDirection === "up") {
       return "visible";
     } else {
       return "hidden";
