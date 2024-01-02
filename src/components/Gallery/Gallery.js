@@ -88,10 +88,21 @@ const Gallery = ({ slides }) => {
                   {slides[slideIndex].youtubeId ? (
                     <YouTube videoId={slides[slideIndex].youtubeId} />
                   ) : (
-                    <img
-                      src={slides[slideIndex].url}
-                      alt={slides[slideIndex].alt}
-                    />
+                    <ButtonUnstyled
+                      className={styles.imageButton}
+                      onClick={() =>
+                        window.open(
+                          slides[slideIndex].url,
+                          "_blank",
+                          "noreferrer"
+                        )
+                      }
+                    >
+                      <img
+                        src={slides[slideIndex].url}
+                        alt={slides[slideIndex].alt}
+                      />
+                    </ButtonUnstyled>
                   )}
                 </div>
               </div>

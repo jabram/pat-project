@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./SingleMedia.module.scss";
 import YouTube from "react-youtube";
 import Caption from "../Caption/Caption";
+import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 
 const SingleMedia = ({ url, alt, youtubeId }) => {
   return (
@@ -12,7 +13,12 @@ const SingleMedia = ({ url, alt, youtubeId }) => {
           {youtubeId ? (
             <YouTube videoId={youtubeId} />
           ) : (
-            <img src={url} alt={alt} />
+            <ButtonUnstyled
+              className={styles.imageButton}
+              onClick={() => window.open(url, "_blank", "noreferrer")}
+            >
+              <img src={url} alt={alt} />
+            </ButtonUnstyled>
           )}
         </div>
       </div>
