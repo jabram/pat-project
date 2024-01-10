@@ -123,7 +123,10 @@ const Gallery = ({ slides }) => {
       <div className={styles.thumbnailContainer}>
         {slides.map((slide, i) => (
           <ButtonUnstyled key={i} onClick={() => slideIt(i - slideIndex)}>
-            <img src={slide.url} alt={slide.alt} />
+            <img
+              src={slide.thumbUrl ? slide.thumbUrl : slide.url}
+              alt={slide.alt}
+            />
           </ButtonUnstyled>
         ))}
       </div>
@@ -137,6 +140,7 @@ Gallery.propTypes = {
       url: PropTypes.string.isRequired,
       alt: PropTypes.string.isRequired,
       youtubeId: PropTypes.string,
+      thumbUrl: PropTypes.string,
     })
   ).isRequired,
 };
