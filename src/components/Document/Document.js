@@ -5,6 +5,7 @@ import ContentBlock from "../ContentBlock/ContentBlock";
 import FileContents from "../FileContents/FileContents";
 import { CONTENT_ARRAY_NAME } from "../../config/constants";
 import Slides from "../Slides/Slides";
+import styles from "./Document.module.scss";
 
 // This component displays data from Firebase Documents
 // Could contain arrays for titles and contentBlocks
@@ -13,8 +14,14 @@ const Document = ({ id, data, setNewChapter }) => {
     <Section id={id} setNewChapter={setNewChapter}>
       {data ? (
         <>
-          {data.titles && (
+          {data.superTitle && (
             <ContentBlock>
+              <h3 className={styles.superTitle}>{data.superTitle}</h3>
+            </ContentBlock>
+          )}
+
+          {data.titles && (
+            <ContentBlock className={styles.titlesBlock}>
               {data.titles.map((title, index) => (
                 <h3 key={`${id}-title${index}}`}>{title}</h3>
               ))}

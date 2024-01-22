@@ -23,8 +23,11 @@ code {
 
 /* chapter titles */
 h3 {
-  font-size: 3.4rem;
+  font-family: "DIN Condensed Bold";
+  font-size: 4.4rem;
   text-align: center;
+  margin: 0;
+  margin-bottom: 2rem;
 }
 
 p {
