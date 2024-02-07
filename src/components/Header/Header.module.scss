@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.title {
+.bookTitle {
   font-size: 1.8rem;
   line-height: 1.33;
   font-weight: bold;
@@ -24,13 +24,23 @@
   }
 }
 
-.chapterTitle {
-  margin: 0;
-  font-size: 2rem;
+.chapterTitles {
   line-height: 1;
   font-weight: bold;
   text-align: center;
   flex: 2;
+
+  > p {
+    margin: 0;
+  }
+}
+
+.chapterTitle {
+  font-size: 2rem;
+}
+
+.partName {
+  font-size: 1.6rem;
 }
 
 .menuButton {

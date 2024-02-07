@@ -57,6 +57,12 @@ const App = () => {
     return titles ? titles[0] : null;
   };
 
+  const getPartName = (index) => {
+    const currentId = FIREBASE_DOC_ORDER[index];
+    const partName = mainContent?.[currentId]?.partName;
+    return partName || null;
+  };
+
   const scrollToIndex = (newIndex) => {
     const chapterId = FIREBASE_DOC_ORDER[newIndex];
     const chapter = document.getElementById(chapterId);
@@ -73,6 +79,7 @@ const App = () => {
         showMenu={showMenu}
         toggleMenu={() => setIsMenuOpen(!isMenuOpen)}
         chapterTitle={getChapterTitle(currentIndex)}
+        partName={getPartName(currentIndex)}
       />
 
       <Title setNewChapter={() => setCurrentIndex(null)} />
@@ -92,7 +99,7 @@ const App = () => {
           onClick={() => scrollToIndex(currentIndex - 1)}
         >
           <div>
-            <span>Previous:</span>
+            <span>{getPartName(currentIndex - 1)}</span>
             <p>{getChapterTitle(currentIndex - 1)}</p>
           </div>
           <CaretUp />
@@ -106,7 +113,7 @@ const App = () => {
             onClick={() => scrollToIndex(currentIndex + 1)}
           >
             <div>
-              <span>Up Next:</span>
+              <span>{getPartName(currentIndex + 1)}</span>
               <p>{getChapterTitle(currentIndex + 1)}</p>
             </div>
             <CaretDown />

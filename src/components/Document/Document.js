@@ -14,9 +14,9 @@ const Document = ({ id, data, setNewChapter }) => {
     <Section id={id} setNewChapter={setNewChapter}>
       {data ? (
         <>
-          {data.superTitle && (
+          {data.partName && data.showSuperTitle && (
             <ContentBlock>
-              <h3 className={styles.superTitle}>{data.superTitle}</h3>
+              <h3 className={styles.superTitle}>{data.partName}</h3>
             </ContentBlock>
           )}
 

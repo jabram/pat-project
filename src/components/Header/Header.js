@@ -32,7 +32,7 @@ function useScrollDirection() {
   return scrollDirection;
 }
 
-const Header = ({ showMenu, toggleMenu, chapterTitle }) => {
+const Header = ({ showMenu, toggleMenu, chapterTitle, partName }) => {
   const scrollDirection = useScrollDirection();
 
   const getAnimation = () => {
@@ -57,13 +57,16 @@ const Header = ({ showMenu, toggleMenu, chapterTitle }) => {
           hidden: { top: "-100px" },
         }}
       >
-        <p className={styles.title}>
+        <p className={styles.bookTitle}>
           Sad Celebrations
           <br />
           and Laughable Laments <span>A Lyrical Autobiography</span>
         </p>
 
-        <p className={styles.chapterTitle}>{chapterTitle}</p>
+        <div className={styles.chapterTitles}>
+          {partName && <p className={styles.partName}>{partName}</p>}
+          <p className={styles.chapterTitle}>{chapterTitle}</p>
+        </div>
 
         {showMenu && (
           <ButtonUnstyled className={styles.menuButton} onClick={toggleMenu}>
@@ -79,12 +82,14 @@ Header.propTypes = {
   showMenu: PropTypes.bool,
   toggleMenu: PropTypes.func.isRequired,
   chapterTitle: PropTypes.string,
+  partName: PropTypes.string,
 };
 
 Header.defaultProps = {
   showMenu: true,
   toggleMenu: undefined,
   chapterTitle: undefined,
+  partName: undefined,
 };
 
 export default Header;
