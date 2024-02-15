@@ -10,18 +10,24 @@ export const THEME_OPTIONS = {
 // within the main-content collection.
 export const FIREBASE_DOC_ORDER = [
   "intro",
-  "part1-chapter0",
-  "part1-chapter1",
-  "part1-chapter2",
-  "part1-chapter3-1",
-  "part1-chapter3-2",
-  "part1-chapter3-3",
-  "part1-chapter4",
-  "part1-chapter5-1",
-  "part1-chapter5-2",
-  "part1-chapter5-3",
-  "part2-chapter1",
-  "part2-chapter2",
+  "chapter0",
+  "chapter1",
+  "chapter2",
+  "chapter3",
+  // "test",
+  // "part1-chapter0",
+  // "part1-chapter1",
+  // "part1-chapter2",
+  //
+  // "part1-chapter3-1",
+  // "part1-chapter3-2",
+  // "part1-chapter3-3",
+  // "part1-chapter4",
+  // "part1-chapter5-1",
+  // "part1-chapter5-2",
+  // "part1-chapter5-3",
+  // "part2-chapter1",
+  // "part2-chapter2",
 ];
 
 // This should match the name of the array in Firestore
