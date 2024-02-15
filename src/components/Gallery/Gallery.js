@@ -137,7 +137,7 @@ const Gallery = ({ slides }) => {
 Gallery.propTypes = {
   slides: PropTypes.arrayOf(
     PropTypes.shape({
-      url: PropTypes.string.isRequired,
+      url: PropTypes.string,
       alt: PropTypes.string.isRequired,
       youtubeId: PropTypes.string,
       thumbUrl: PropTypes.string,
