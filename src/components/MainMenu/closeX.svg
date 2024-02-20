@@ -1,24 +1,12 @@
-<svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_2284_18)">
-<g filter="url(#filter1_d_2284_18)">
-<circle cx="31" cy="27" r="22" fill="white"/>
-<circle cx="31" cy="27" r="21" stroke="#454545" stroke-width="2"/>
+<circle cx="22" cy="22" r="22" fill="white"/>
+<circle cx="22" cy="22" r="21" stroke="#454545" stroke-width="2"/>
 </g>
-<line x1="21.2227" y1="36.8787" x2="41.1013" y2="17" stroke="black" stroke-width="3" stroke-linecap="round"/>
-<line x1="20.8987" y1="17" x2="40.7773" y2="36.8787" stroke="black" stroke-width="3" stroke-linecap="round"/>
-</g>
+<line x1="12.2227" y1="31.8787" x2="32.1013" y2="12" stroke="black" stroke-width="3" stroke-linecap="round"/>
+<line x1="11.8987" y1="12" x2="31.7773" y2="31.8787" stroke="black" stroke-width="3" stroke-linecap="round"/>
 <defs>
-<filter id="filter0_d_2284_18" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="4.5"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2284_18"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2284_18" result="shape"/>
-</filter>
-<filter id="filter1_d_2284_18" x="5" y="1" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_2284_18" x="0" y="0" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset/>
