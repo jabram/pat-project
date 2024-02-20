@@ -40,13 +40,50 @@ h4 {
 }
 
 p {
+  font-family: Georgia, serif;
   font-size: 2.2rem;
-  line-height: 1.36;
+  line-height: 1.45;
   margin: 0 0 3rem;
+}
+
+a {
+  font-style: italic;
+  font-weight: bold;
+  color: var(--color-text);
 }
 
 svg {
   font-size: 2.2rem;
+}
+
+blockquote {
+  margin-inline-start: 7.5rem;
+  margin-inline-end: 6.5rem;
+}
+
+blockquote,
+blockquote p {
+  font-family: "DIN Condensed Bold";
+  font-size: 3.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+  position: relative;
+}
+
+blockquote:before {
+  position: absolute;
+  left: -6rem;
+  top: 0;
+  content: url("/public/quote.svg");
+}
+
+blockquote.music:before {
+  content: url("/public/music.svg");
+}
+
+/* footnotes */
+footer {
+  opacity: 0.6;
 }
 
 @font-face {
