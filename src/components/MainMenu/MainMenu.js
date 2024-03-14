@@ -36,134 +36,139 @@ const MainMenu = ({ isMenuOpen, closeMenu, isDarkMode, toggleDarkMode }) => {
           <MainMenuExpandable title="Part 1: The 70's">
             <MainMenuItem
               title="Chapter 0: Point of Departure"
-              onClick={() => scrollToSection("part1-chapter0")}
+              onClick={() => scrollToSection("chapter0")}
               isExpandedContent={true}
             />
             <MainMenuItem
               title="Chapter 1: Goober's Hill Blues"
-              onClick={() => scrollToSection("part1-chapter1")}
+              onClick={() => scrollToSection("chapter1")}
               isExpandedContent={true}
             />
             <MainMenuItem
               title="Chapter 2: Carbondale"
-              onClick={() => scrollToSection("part1-chapter2")}
+              onClick={() => scrollToSection("chapter2")}
               isExpandedContent={true}
             />
             <MainMenuItem
               title="Chapter 3: Game Changers"
-              onClick={() => scrollToSection("part1-chapter3-1")}
+              onClick={() => scrollToSection("chapter3")}
               isExpandedContent={true}
             />
             <MainMenuItem
               title="Chapter 4: Birth of a Cynic"
-              onClick={() => scrollToSection("part1-chapter4")}
+              onClick={() => scrollToSection("chapter4")}
               isExpandedContent={true}
             />
             <MainMenuItem
               title="Chapter 5: Awake Before Dawn"
-              onClick={() => scrollToSection("part1-chapter5-1")}
+              onClick={() => scrollToSection("chapter5")}
               isExpandedContent={true}
             />
           </MainMenuExpandable>
 
           <MainMenuExpandable title="Part 2: The 80's">
             <MainMenuItem
-              title="Chapter 1: Neither Here nor There"
-              onClick={() => scrollToSection("part2-chapter1")}
+              title="Chapter 6: Neither Here nor There"
+              onClick={() => scrollToSection("chapter6")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 2: The Road to Mount Gretna"
-              onClick={() => scrollToSection("part2-chapter2")}
+              title="Chapter 7: The Road to Mount Gretna"
+              onClick={() => scrollToSection("chapter7")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 3: Is This Thing On"
-              onClick={() => console.log("TODO: go to Chapter 3")}
+              title="Chapter 8: Is This Thing On?"
+              onClick={() => scrollToSection("chapter8")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 4: Born That Way"
-              onClick={() => console.log("TODO: go to Chapter 4")}
+              title="Chapter 9: Born That Way"
+              onClick={() => scrollToSection("chapter9")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 5: But It's Art Show Weekend"
-              onClick={() => console.log("TODO: go to Chapter 5")}
+              title="Chapter 10: But It's Art Show Weekend"
+              onClick={() => scrollToSection("chapter10")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 6: Hello Old Friends"
-              onClick={() => console.log("TODO: go to Chapter 6")}
+              title="Chapter 11: Hello Old Friends"
+              onClick={() => scrollToSection("chapter11")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 7: A Good Talking To"
-              onClick={() => console.log("TODO: go to Chapter 7")}
+              title="Chapter 12: A Good Talking To"
+              onClick={() => scrollToSection("chapter12")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 8: Dutch Blues and Chautauqua Rags"
-              onClick={() => console.log("TODO: go to Chapter 8")}
+              title="Chapter 13: Dutch Blues and Chautauqua Rags"
+              onClick={() => scrollToSection("chapter13")}
               isExpandedContent={true}
             />
           </MainMenuExpandable>
 
           <MainMenuExpandable title="Part 3: Boston and the 90's">
             <MainMenuItem
-              title="Chapter 1: Love's Illusions"
-              onClick={() => console.log("TODO: go to Chapter 1")}
+              title="Chapter 14: Love's Illusions"
+              onClick={() => scrollToSection("chapter14")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 2: Long Time Comin'"
-              onClick={() => console.log("TODO: go to Chapter 2")}
+              title="Chapter 15: Long Time Coming"
+              onClick={() => scrollToSection("chapter15")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 3: Bad Liver and a Broken Heart"
-              onClick={() => console.log("TODO: go to Chapter 3")}
+              title="Chapter 16: Bad Liver and a Broken Heart (In Brighton)"
+              onClick={() => scrollToSection("chapter16")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 4: Crescendo and Diminuendo in Booze"
-              onClick={() => console.log("TODO: go to Chapter 4")}
+              title="Chapter 17: Crescendo and Diminuendo in Booze"
+              onClick={() => scrollToSection("chapter17")}
               isExpandedContent={true}
             />
           </MainMenuExpandable>
 
           <MainMenuExpandable title="Part 4: The 00's">
             <MainMenuItem
-              title="Chapter 1: The '00s Gutted"
-              onClick={() => console.log("TODO: go to Chapter 1")}
+              title="Chapter 18: Gutted"
+              onClick={() => scrollToSection("chapter18")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 2: Before the Fall"
-              onClick={() => console.log("TODO: go to Chapter 2")}
+              title="Chapter 19: Before the Fall"
+              onClick={() => scrollToSection("chapter19")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 3: Swim or Sink"
-              onClick={() => console.log("TODO: go to Chapter 3")}
+              title="Chapter 20: Swim or Sink"
+              onClick={() => scrollToSection("chapter20")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 4: Deeper Hole"
-              onClick={() => console.log("TODO: go to Chapter 4")}
+              title="Chapter 21: Deeper Hole"
+              onClick={() => scrollToSection("chapter21")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 5: No Fight Left"
-              onClick={() => console.log("TODO: go to Chapter 5")}
+              title="Chapter 22: No Fight Left"
+              onClick={() => scrollToSection("chapter22")}
               isExpandedContent={true}
             />
             <MainMenuItem
-              title="Chapter 6: I Had No Idea"
-              onClick={() => console.log("TODO: go to Chapter 6")}
+              title="Chapter 23: I Had No Idea"
+              onClick={() => scrollToSection("chapter23")}
               isExpandedContent={true}
             />
           </MainMenuExpandable>
+
+          <MainMenuItem
+            title="Appendix-itis"
+            onClick={() => scrollToSection("appendix-itis")}
+          />
 
           <h2 className={styles.menuTitle}>Options</h2>
 
