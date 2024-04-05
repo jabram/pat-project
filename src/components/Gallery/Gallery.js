@@ -86,7 +86,10 @@ const Gallery = ({ slides }) => {
                   }`}
                 >
                   {slides[slideIndex].youtubeId ? (
-                    <YouTube videoId={slides[slideIndex].youtubeId} />
+                    <YouTube
+                      videoId={slides[slideIndex].youtubeId}
+                      opts={{ playerVars: { cc_load_policy: 1 } }}
+                    />
                   ) : (
                     <ButtonUnstyled
                       className={styles.imageButton}
