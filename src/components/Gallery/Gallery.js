@@ -125,7 +125,11 @@ const Gallery = ({ slides }) => {
       </div>
       <div className={styles.thumbnailContainer}>
         {slides.map((slide, i) => (
-          <ButtonUnstyled key={i} onClick={() => slideIt(i - slideIndex)}>
+          <ButtonUnstyled
+            key={i}
+            onClick={() => slideIt(i - slideIndex)}
+            className={slideIndex === i ? styles.selected : ""}
+          >
             <img
               src={slide.thumbUrl ? slide.thumbUrl : slide.url}
               alt={slide.alt}

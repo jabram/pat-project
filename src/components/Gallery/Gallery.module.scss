@@ -65,15 +65,22 @@
 }
 
 .thumbnailContainer {
-  height: 10rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 16px;
   margin-top: 3.2rem;
 
-  button,
-  img {
-    height: 100%;
+  button {
+    height: 10rem;
+
+    &.selected {
+      border: 3px solid var(--color-buttonBackground);
+    }
+
+    img {
+      height: 100%;
+    }
   }
 }
