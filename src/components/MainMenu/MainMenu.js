@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./MainMenu.module.scss";
-import { ReactComponent as CloseX } from "./closeX.svg";
+import { ReactComponent as CloseX } from "../../icons/closeX.svg";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 import MainMenuItem from "../MainMenuItem/MainMenuItem";
 import MainMenuExpandable from "../MainMenuExpandable/MainMenuExpandable";

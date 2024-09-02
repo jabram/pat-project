@@ -4,9 +4,11 @@ import { downloadStorageFile } from "../../firebase";
 import Markdown from "markdown-to-jsx";
 import ContentBlock from "../ContentBlock/ContentBlock";
 import PlayerButton from "../PlayerButton/PlayerButton";
+import Player from "../Player/Player";
 
 const FileContents = ({ fileUrl }) => {
   const [content, setContent] = useState(null);
+  const [currentPlayer, setCurrentPlayer] = useState(null);
 
   useEffect(() => {
     fetchContent().then((response) => setContent(response));
@@ -28,12 +30,23 @@ const FileContents = ({ fileUrl }) => {
           overrides: {
             a: {
               component: PlayerButton,
+              props: {
+                onClick: (mediaId) => {
+                  setCurrentPlayer(mediaId);
+                },
+              },
             },
           },
         }}
       >
         {content || "### Loading..."}
       </Markdown>
+      {currentPlayer && (
+        <Player
+          mediaId={currentPlayer}
+          onClose={() => setCurrentPlayer(null)}
+        />
+      )}
     </ContentBlock>
   );
 };

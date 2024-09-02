@@ -4,23 +4,23 @@ import { Tooltip } from "react-tooltip";
 import ReactDOMServer from "react-dom/server";
 import styles from "./PlayerButton.module.scss";
 
-const PlayerButton = ({ children, href }) => {
+const PlayerButton = ({ children: title, href: mediaId, onClick }) => {
   return (
     <span className={styles.playerButtonContainer}>
       <button
-        data-tooltip-id={href}
+        data-tooltip-id={mediaId}
         data-tooltip-html={ReactDOMServer.renderToStaticMarkup(
           <div>
-            Listen to: <span className={styles.title}>{children}</span>
+            Listen to: <span className={styles.title}>{title}</span>
           </div>
         )}
         className={styles.playerButton}
-        onClick={() => console.log("clicked it!", href)}
+        onClick={() => onClick(mediaId)}
       >
-        {children}
+        {title}
       </button>
       <Tooltip
-        id={href}
+        id={mediaId}
         className={styles.tooltip}
         classNameArrow={styles.tooltipArrow}
       />
@@ -31,11 +31,13 @@ const PlayerButton = ({ children, href }) => {
 PlayerButton.propTypes = {
   children: PropTypes.node,
   href: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 PlayerButton.defaultProps = {
   children: undefined,
   href: undefined,
+  onClick: undefined,
 };
 
 export default PlayerButton;
