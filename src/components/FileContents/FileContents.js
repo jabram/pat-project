@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { downloadStorageFile } from "../../firebase";
 import Markdown from "markdown-to-jsx";
 import ContentBlock from "../ContentBlock/ContentBlock";
+import PlayerButton from "../PlayerButton/PlayerButton";
 
 const FileContents = ({ fileUrl }) => {
   const [content, setContent] = useState(null);
@@ -21,7 +22,18 @@ const FileContents = ({ fileUrl }) => {
 
   return (
     <ContentBlock>
-      <Markdown>{content || "### Loading..."}</Markdown>
+      <Markdown
+        // all a tags are treated as buttons to launch video/lyrics player
+        options={{
+          overrides: {
+            a: {
+              component: PlayerButton,
+            },
+          },
+        }}
+      >
+        {content || "### Loading..."}
+      </Markdown>
     </ContentBlock>
   );
 };
