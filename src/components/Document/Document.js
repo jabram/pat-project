@@ -35,6 +35,7 @@ const Document = ({ id, data, setNewChapter }) => {
                     <FileContents
                       key={`${id}-section${index}`}
                       fileUrl={section.value}
+                      media={data.media}
                     />
                   );
                 case "SLIDES":

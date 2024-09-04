@@ -6,7 +6,7 @@ import ContentBlock from "../ContentBlock/ContentBlock";
 import PlayerButton from "../PlayerButton/PlayerButton";
 import Player from "../Player/Player";
 
-const FileContents = ({ fileUrl }) => {
+const FileContents = ({ fileUrl, media }) => {
   const [content, setContent] = useState(null);
   const [currentPlayer, setCurrentPlayer] = useState(null);
 
@@ -32,7 +32,7 @@ const FileContents = ({ fileUrl }) => {
               component: PlayerButton,
               props: {
                 onClick: (mediaId) => {
-                  setCurrentPlayer(mediaId);
+                  setCurrentPlayer(mediaId.replace("#", ""));
                 },
               },
             },
@@ -44,6 +44,9 @@ const FileContents = ({ fileUrl }) => {
       {currentPlayer && (
         <Player
           mediaId={currentPlayer}
+          title={media[currentPlayer].title}
+          youtubeId={media[currentPlayer].youtubeId}
+          lyrics={media[currentPlayer].lyrics}
           onClose={() => setCurrentPlayer(null)}
         />
       )}
@@ -53,10 +56,12 @@ const FileContents = ({ fileUrl }) => {
 
 FileContents.propTypes = {
   fileUrl: PropTypes.string.isRequired,
+  media: PropTypes.object,
 };
 
 FileContents.defaultProps = {
   fileUrl: undefined,
+  media: undefined,
 };
 
 export default FileContents;
