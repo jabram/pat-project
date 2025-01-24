@@ -4,6 +4,7 @@ import styles from "./Player.module.scss";
 import ButtonUnstyled from "../ButtonUnstyled/ButtonUnstyled";
 import { ReactComponent as CloseX } from "../../icons/closeX.svg";
 import YouTube from "react-youtube";
+import Markdown from "markdown-to-jsx";
 
 const Player = ({ title, youtubeId, lyrics, onClose }) => {
   return (
@@ -15,7 +16,7 @@ const Player = ({ title, youtubeId, lyrics, onClose }) => {
         </div>
         <div className={styles.lyrics}>
           <h3 className={styles.innerTitle}>{title}</h3>
-          <p>{lyrics}</p>
+          <Markdown>{lyrics}</Markdown>
         </div>
 
         <ButtonUnstyled onClick={onClose} className={styles.closeButton}>

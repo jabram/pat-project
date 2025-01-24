@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { downloadStorageFile } from "../../firebase";
 import Markdown from "markdown-to-jsx";
@@ -6,20 +6,30 @@ import ContentBlock from "../ContentBlock/ContentBlock";
 import PlayerButton from "../PlayerButton/PlayerButton";
 import Player from "../Player/Player";
 
+const LYRICS_LOADING_TEXT = "Loading lyrics...";
+
 const FileContents = ({ fileUrl, media }) => {
   const [content, setContent] = useState(null);
   const [currentPlayer, setCurrentPlayer] = useState(null);
+  const [lyrics, setLyrics] = useState(LYRICS_LOADING_TEXT);
 
-  useEffect(() => {
-    fetchContent().then((response) => setContent(response));
-  });
-
-  const fetchContent = async () => {
+  const fetchContent = useCallback(async (url) => {
     try {
-      return await downloadStorageFile(fileUrl);
+      return await downloadStorageFile(url);
     } catch (error) {
       console.error("fetchContent error:", error);
     }
+  }, []);
+
+  useEffect(() => {
+    if (!content) {
+      fetchContent(fileUrl).then((response) => setContent(response));
+    }
+  }, [fileUrl, content, fetchContent]);
+
+  const closePlayer = () => {
+    setCurrentPlayer(null);
+    setLyrics(LYRICS_LOADING_TEXT);
   };
 
   return (
@@ -32,7 +42,10 @@ const FileContents = ({ fileUrl, media }) => {
               component: PlayerButton,
               props: {
                 onClick: (mediaId) => {
-                  setCurrentPlayer(mediaId.replace("#", ""));
+                  fetchContent(media[mediaId].lyricsUrl).then((response) =>
+                    setLyrics(response)
+                  );
+                  setCurrentPlayer(mediaId);
                 },
               },
             },
@@ -43,11 +56,10 @@ const FileContents = ({ fileUrl, media }) => {
       </Markdown>
       {currentPlayer && (
         <Player
-          mediaId={currentPlayer}
           title={media[currentPlayer].title}
           youtubeId={media[currentPlayer].youtubeId}
-          lyrics={media[currentPlayer].lyrics}
-          onClose={() => setCurrentPlayer(null)}
+          lyrics={lyrics}
+          onClose={closePlayer}
         />
       )}
     </ContentBlock>

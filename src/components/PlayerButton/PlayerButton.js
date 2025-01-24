@@ -15,7 +15,7 @@ const PlayerButton = ({ children: title, href: mediaId, onClick }) => {
           </div>
         )}
         className={styles.playerButton}
-        onClick={() => onClick(mediaId)}
+        onClick={() => onClick(mediaId.replace("#", ""))}
       >
         {title}
       </button>
