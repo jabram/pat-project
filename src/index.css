@@ -29,18 +29,18 @@ code {
 h3 {
   font-family: "DIN Condensed Bold";
   font-size: 4.4rem;
+  line-height: 1.2;
   text-align: center;
   margin: 0;
-  margin-bottom: 2rem;
 }
 
 /* sub-chapter titles, from within markdown files */
 h4 {
   font-family: "DIN Condensed Bold";
-  font-size: 3.6rem;
+  font-size: 4.4rem;
+  line-height: 1.2;
   text-align: center;
-  font-style: italic;
-  margin: 6rem 0 2rem;
+  margin: 9rem 0 6rem;
 }
 
 p {
@@ -51,9 +51,16 @@ p {
 }
 
 a {
+  color: var(--color-text);
+}
+
+a:not(:has(sup)) {
   font-style: italic;
   font-weight: bold;
-  color: var(--color-text);
+}
+
+a:has(sup) {
+  text-decoration: none;
 }
 
 svg {
@@ -61,8 +68,9 @@ svg {
 }
 
 blockquote {
-  margin-inline-start: 7.5rem;
-  margin-inline-end: 6.5rem;
+  padding-inline-start: 7.5rem;
+  margin-inline-start: 4rem;
+  margin-inline-end: 9rem;
 }
 
 blockquote,
@@ -72,11 +80,12 @@ blockquote p {
   line-height: 1.2;
   font-weight: bold;
   position: relative;
+  color: #000;
 }
 
 blockquote:before {
   position: absolute;
-  left: -6rem;
+  left: 0;
   top: 0;
   content: url("/public/quote.svg");
 }
@@ -87,7 +96,20 @@ blockquote.music:before {
 
 /* footnotes */
 footer {
+  margin-block: 10rem;
   opacity: 0.6;
+}
+
+footer p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-style: italic;
+}
+
+footer p sup {
+  font-size: 1rem;
+  padding-right: 0.35rem;
 }
 
 @font-face {

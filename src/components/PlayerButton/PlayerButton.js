@@ -4,7 +4,13 @@ import { Tooltip } from "react-tooltip";
 import ReactDOMServer from "react-dom/server";
 import styles from "./PlayerButton.module.scss";
 
-const PlayerButton = ({ children: title, href: mediaId, onClick }) => {
+const PlayerButton = ({ children: title, href, onClick }) => {
+  // handles regular links
+  if (!href.startsWith("#media-")) {
+    return <a href={href}>{title}</a>;
+  }
+
+  const mediaId = href.replace("#media-", "#");
   return (
     <span className={styles.playerButtonContainer}>
       <button

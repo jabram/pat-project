@@ -49,6 +49,22 @@ const FileContents = ({ fileUrl, media }) => {
                 },
               },
             },
+            // this customizes markup for footnotes so they can be styled the way we want
+            // super hacky but works:
+            //     kid.props.children[0]    = footnote id
+            //     kid.props.children[1][0] = footnote text (will there ever be a [1][1] or [1][2]?)
+            footer: {
+              component: ({ children }) => (
+                <footer>
+                  {children.map((kid) => (
+                    <p>
+                      <sup>{kid.props.children[0]}</sup>
+                      {kid.props.children[1][0].replace(": ", "")}
+                    </p>
+                  ))}
+                </footer>
+              ),
+            },
           },
         }}
       >

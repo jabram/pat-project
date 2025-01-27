@@ -25,4 +25,9 @@
 
 .expandableBlock {
   background: var(--color-expandedBackground);
+
+  > div {
+    max-width: 120rem;
+    margin: 0 auto;
+  }
 }
