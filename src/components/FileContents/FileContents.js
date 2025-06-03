@@ -65,6 +65,15 @@ const FileContents = ({ fileUrl, media }) => {
                 </footer>
               ),
             },
+            blockquote: {
+              component: ({ children }) => {
+                // For whatever reason, standard blockquotes are rendered with <p> tags,
+                // music blockquotes are rendered as strings. This standardizes that.
+                const content =
+                  children[0].type === "p" ? children : <p>{children}</p>;
+                return <blockquote>{content}</blockquote>;
+              },
+            },
           },
         }}
       >

@@ -68,9 +68,11 @@ svg {
 }
 
 blockquote {
-  padding-inline-start: 7.5rem;
-  margin-inline-start: 4rem;
-  margin-inline-end: 9rem;
+  margin-inline: 9rem;
+}
+
+blockquote p {
+  display: inline-block;
 }
 
 blockquote,
@@ -81,16 +83,17 @@ blockquote p {
   font-weight: bold;
   position: relative;
   color: #000;
+  text-align: center;
 }
 
-blockquote:before {
+blockquote > p:before {
   position: absolute;
-  left: 0;
+  left: -75px;
   top: 0;
   content: url("/public/quote.svg");
 }
 
-blockquote.music:before {
+blockquote.music > p:before {
   content: url("/public/music.svg");
 }
 
