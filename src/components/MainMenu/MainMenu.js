@@ -29,6 +29,11 @@ const MainMenu = ({ isMenuOpen, closeMenu, isDarkMode, toggleDarkMode }) => {
           </h2>
 
           <MainMenuItem
+            title="Preface and Thank Yous"
+            onClick={() => scrollToSection("preface")}
+          />
+
+          <MainMenuItem
             title="Introduction"
             onClick={() => scrollToSection("intro")}
           />

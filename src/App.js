@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import ButtonPrimary from "./components/ButtonPrimary/ButtonPrimary";
 import { ReactComponent as CaretUp } from "./icons/caretUp.svg";
 import { ReactComponent as CaretDown } from "./icons/caretDown.svg";
+import Intro from "./content/Intro";
+import Preface from "./content/Preface";
 
 const App = () => {
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ const App = () => {
   const [showMenu] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("theme") === THEME_OPTIONS.dark || false
+    localStorage.getItem("theme") === THEME_OPTIONS.dark || false,
   );
 
   // updates the route when currentIndex is updated
@@ -46,7 +48,7 @@ const App = () => {
   const toggleDarkMode = () => {
     localStorage.setItem(
       "theme",
-      isDarkMode ? THEME_OPTIONS.light : THEME_OPTIONS.dark
+      isDarkMode ? THEME_OPTIONS.light : THEME_OPTIONS.dark,
     );
     setIsDarkMode(!isDarkMode);
   };
@@ -84,12 +86,15 @@ const App = () => {
 
       <Title setNewChapter={() => setCurrentIndex(null)} />
 
+      <Preface setNewChapter={() => setCurrentIndex(0)} />
+      <Intro setNewChapter={() => setCurrentIndex(1)} />
+
       {FIREBASE_DOC_ORDER.map((docId, index) => (
         <Document
           key={docId}
           id={docId}
           data={mainContent?.[docId] || null}
-          setNewChapter={() => setCurrentIndex(index)}
+          setNewChapter={() => setCurrentIndex(index + 2)}
         />
       ))}
 
