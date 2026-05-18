@@ -13,6 +13,8 @@ import { ReactComponent as CaretDown } from "./icons/caretDown.svg";
 import Intro from "./content/Intro";
 import Preface from "./content/Preface";
 
+const SECTION_ORDER = ["preface", "intro", ...FIREBASE_DOC_ORDER];
+
 const App = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(null);
@@ -25,7 +27,7 @@ const App = () => {
 
   // updates the route when currentIndex is updated
   useEffect(() => {
-    const newId = FIREBASE_DOC_ORDER[currentIndex];
+    const newId = SECTION_ORDER[currentIndex];
     if (newId) {
       navigate(`#${newId}`);
     } else {
@@ -54,19 +56,19 @@ const App = () => {
   };
 
   const getChapterTitle = (index) => {
-    const currentId = FIREBASE_DOC_ORDER[index];
+    const currentId = SECTION_ORDER[index];
     const titles = mainContent?.[currentId]?.titles;
     return titles ? titles[0] : null;
   };
 
   const getPartName = (index) => {
-    const currentId = FIREBASE_DOC_ORDER[index];
+    const currentId = SECTION_ORDER[index];
     const partName = mainContent?.[currentId]?.partName;
     return partName || null;
   };
 
   const scrollToIndex = (newIndex) => {
-    const chapterId = FIREBASE_DOC_ORDER[newIndex];
+    const chapterId = SECTION_ORDER[newIndex];
     const chapter = document.getElementById(chapterId);
     chapter.scrollIntoView({ behavior: "smooth" });
   };
@@ -111,7 +113,7 @@ const App = () => {
         </ButtonPrimary>
       )}
 
-      {currentIndex < FIREBASE_DOC_ORDER.length - 1 &&
+      {currentIndex < SECTION_ORDER.length - 1 &&
         !!getChapterTitle(currentIndex + 1) && (
           <ButtonPrimary
             className={`${styles.navButton} ${styles.nextChapter}`}
