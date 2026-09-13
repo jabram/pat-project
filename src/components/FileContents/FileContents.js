@@ -43,7 +43,7 @@ const FileContents = ({ fileUrl, media }) => {
               props: {
                 onClick: (mediaId) => {
                   fetchContent(media[mediaId].lyricsUrl).then((response) =>
-                    setLyrics(response)
+                    setLyrics(response),
                   );
                   setCurrentPlayer(mediaId);
                 },
@@ -83,6 +83,7 @@ const FileContents = ({ fileUrl, media }) => {
         <Player
           title={media[currentPlayer].title}
           youtubeId={media[currentPlayer].youtubeId}
+          youtubeStart={media[currentPlayer].youtubeStart}
           lyrics={lyrics}
           onClose={closePlayer}
         />

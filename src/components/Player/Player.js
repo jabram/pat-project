@@ -6,13 +6,16 @@ import { ReactComponent as CloseX } from "../../icons/closeX.svg";
 import YouTube from "react-youtube";
 import Markdown from "markdown-to-jsx";
 
-const Player = ({ title, youtubeId, lyrics, onClose }) => {
+const Player = ({ title, youtubeId, youtubeStart, lyrics, onClose }) => {
   return (
     <div className={`playerModal ${styles.modalContainer}`}>
       <div className={styles.player}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.youtube}>
-          <YouTube videoId={youtubeId} />
+          <YouTube
+            videoId={youtubeId}
+            opts={{ playerVars: { start: youtubeStart } }}
+          />
         </div>
         <div className={styles.lyrics}>
           <h3 className={styles.innerTitle}>{title}</h3>
@@ -30,6 +33,7 @@ const Player = ({ title, youtubeId, lyrics, onClose }) => {
 Player.propTypes = {
   title: PropTypes.string.isRequired,
   youtubeId: PropTypes.string.isRequired,
+  youtubeStart: PropTypes.number,
   lyrics: PropTypes.string.isRequired,
   onClose: PropTypes.func,
 };
@@ -37,6 +41,7 @@ Player.propTypes = {
 Player.defaultProps = {
   title: undefined,
   youtubeId: undefined,
+  youtubeStart: 0,
   lyrics: undefined,
   onClose: undefined,
 };

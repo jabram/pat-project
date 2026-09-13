@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup
+
+This app reads content from Firebase, so it needs credentials before `npm start` will work.
+
+1. Copy the sample env file:
+   ```
+   cp sample.env .env
+   ```
+2. Fill in the values in `.env` with your Firebase project's credentials. In the [Firebase console](https://console.firebase.google.com/), open the project → **Project settings** (gear icon) → **General** → **Your apps** → select the web app → **SDK setup and configuration**, and copy `apiKey`, `projectId`, and `appId` into the matching `REACT_APP_FIREBASE_*` variables.
+3. Restart `npm start` if it's already running — Create React App only reads `.env` at server start.
+
 ## Available Scripts
 
 In the project directory, you can run:
