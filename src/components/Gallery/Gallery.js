@@ -113,13 +113,13 @@ const Gallery = ({ slides }) => {
             </motion.div>
           </AnimatePresence>
         </div>
-        <ButtonUnstyled className={styles.leftButt} onClick={() => slideIt(1)}>
-          <CaretLeft />
-        </ButtonUnstyled>
         <ButtonUnstyled
-          className={styles.rightButt}
+          className={styles.leftButt}
           onClick={() => slideIt(-1)}
         >
+          <CaretLeft />
+        </ButtonUnstyled>
+        <ButtonUnstyled className={styles.rightButt} onClick={() => slideIt(1)}>
           <CaretRight />
         </ButtonUnstyled>
       </div>
