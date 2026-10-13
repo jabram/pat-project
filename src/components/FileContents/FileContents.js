@@ -86,6 +86,7 @@ const FileContents = ({ fileUrl, media }) => {
           youtubeStart={media[currentPlayer].youtubeStart}
           lyrics={lyrics}
           onClose={closePlayer}
+          shouldHideLyrics={media[currentPlayer].shouldHideLyrics}
         />
       )}
     </ContentBlock>

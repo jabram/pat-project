@@ -21,6 +21,10 @@
   font-family: "DIN Condensed Bold";
   text-align: center;
   position: relative;
+
+  &.hideLyrics {
+    height: auto;
+  }
 }
 
 .closeButton {
