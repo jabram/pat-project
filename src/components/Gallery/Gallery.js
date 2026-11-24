@@ -116,10 +116,15 @@ const Gallery = ({ slides }) => {
         <ButtonUnstyled
           className={styles.leftButt}
           onClick={() => slideIt(-1)}
+          aria-label="Previous slide"
         >
           <CaretLeft />
         </ButtonUnstyled>
-        <ButtonUnstyled className={styles.rightButt} onClick={() => slideIt(1)}>
+        <ButtonUnstyled
+          className={styles.rightButt}
+          onClick={() => slideIt(1)}
+          aria-label="Next slide"
+        >
           <CaretRight />
         </ButtonUnstyled>
       </div>

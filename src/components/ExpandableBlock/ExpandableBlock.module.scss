@@ -31,3 +31,17 @@
     margin: 0 auto;
   }
 }
+
+@import "../../config/breakpoints.scss";
+
+// horizontal padding lives here (the motion variants only animate top/bottom)
+// so it can change by screen size
+.expandableBlock {
+  padding-inline: 3rem;
+}
+
+@media (max-width: $phone) {
+  .expandableBlock {
+    padding-inline: 0.4rem;
+  }
+}

@@ -76,11 +76,65 @@
     height: 10rem;
 
     &.selected {
-      border: 3px solid var(--color-buttonBackground);
+      border: 3px solid var(--color-text);
     }
 
     img {
       height: 100%;
+    }
+  }
+}
+
+@import "../../config/breakpoints.scss";
+
+@media (max-width: $tabletPortrait) {
+  .galleryContainer {
+    margin: 3rem 5rem;
+  }
+
+  .leftButt {
+    left: -4rem;
+  }
+
+  .rightButt {
+    right: -4rem;
+  }
+}
+
+/* phones: thinner side margins, arrows stay inside them */
+@media (max-width: $phone) {
+  .galleryContainer {
+    margin: 2rem 3.2rem;
+  }
+
+  .leftButt {
+    left: -3.2rem;
+  }
+
+  .rightButt {
+    right: -3.2rem;
+  }
+}
+
+// touch screens up to tablet size (phones in either orientation): 44px round
+// tap targets with a backing so they stay visible over images and the grey panel
+@media (max-width: $phone), (pointer: coarse) and (max-width: $tablet) {
+  .slideContainer > button {
+    width: 4.4rem;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--color-menuBackground);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .thumbnailContainer {
+    gap: 8px;
+
+    button {
+      height: 6rem;
     }
   }
 }

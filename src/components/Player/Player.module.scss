@@ -86,3 +86,46 @@
   line-height: 1.2;
   margin: 0 0 2rem;
 }
+
+@import "../../config/breakpoints.scss";
+
+@media (max-width: $tablet) {
+  .player {
+    // wider than desktop, but capped by screen height so a landscape
+    // tablet still has room for the lyrics under the video
+    width: min(70%, 61vh);
+    min-width: 38%;
+  }
+}
+
+/* phones: nearly full screen, leaving room for the close button's overhang */
+@media (max-width: $phone) {
+  .player {
+    width: calc(100% - 3.2rem);
+    height: 85vh;
+    height: 85dvh;
+    padding: 1.2rem 1.2rem 1.4rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .lyrics {
+    padding: 1.6rem 1.4rem 0;
+  }
+}
+
+/* landscape phones: very short screens */
+@media (max-height: 500px) {
+  .player {
+    width: min(90%, 80vh);
+    min-width: 0;
+    height: 92vh;
+    padding: 0.8rem 1.2rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}

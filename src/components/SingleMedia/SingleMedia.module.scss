@@ -26,3 +26,17 @@
     height: 100%;
   }
 }
+
+@import "../../config/breakpoints.scss";
+
+@media (max-width: $tabletPortrait) {
+  .mediaContainer {
+    margin: 3rem 5rem;
+  }
+}
+
+@media (max-width: $phone) {
+  .mediaContainer {
+    margin: 2rem 1.6rem;
+  }
+}

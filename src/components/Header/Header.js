@@ -53,8 +53,10 @@ const Header = ({ showMenu, toggleMenu, chapterTitle, partName }) => {
         initial={chapterTitle ? "visible" : "hidden"}
         animate={getAnimation()}
         variants={{
-          visible: { top: 0 },
-          hidden: { top: "-100px" },
+          visible: { top: 0, y: 0 },
+          // move up by the header's own height (y: -100%) plus 100px so the
+          // header and its shadow are fully hidden however tall it wraps
+          hidden: { top: "-100px", y: "-100%" },
         }}
       >
         <p className={styles.bookTitle}>
@@ -69,7 +71,11 @@ const Header = ({ showMenu, toggleMenu, chapterTitle, partName }) => {
         </div>
 
         {showMenu && (
-          <ButtonUnstyled className={styles.menuButton} onClick={toggleMenu}>
+          <ButtonUnstyled
+            className={styles.menuButton}
+            onClick={toggleMenu}
+            aria-label="Open menu"
+          >
             <Hamburger className={styles.menuIcon} />
           </ButtonUnstyled>
         )}

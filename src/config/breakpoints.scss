@@ -1,0 +1,5 @@
+// Shared responsive breakpoints. Desktop styles are the default; these
+// only ever narrow things down, so desktop layout is unaffected.
+$tablet: 1024px; // landscape tablets and small laptops
+$tabletPortrait: 820px; // portrait tablets: reading column and media go wider
+$phone: 600px; // phones (375-600px wide)

@@ -15,6 +15,7 @@
   --color-toggleBackground: #454545;
   --color-toggleHead: #fff;
   --color-expandedBackground: #e7e7e7;
+  --color-quote: #000;
 
   &.darkMode {
     background: #262626;
@@ -30,6 +31,7 @@
     --color-toggleBackground: #6b9e59;
     --color-toggleHead: #000;
     --color-expandedBackground: #000;
+    --color-quote: #fff;
   }
 }
 
@@ -59,4 +61,55 @@
 
 .nextChapter {
   right: 2rem;
+}
+
+@import "./config/breakpoints.scss";
+
+/* tablets: smaller text so the buttons cover less of the reading column */
+@media (max-width: $tablet) {
+  .navButton {
+    padding: 1rem 1.6rem;
+    gap: 1.2rem;
+
+    span {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      line-height: 1.25;
+    }
+  }
+}
+
+/* phones (either orientation) and portrait tablets: previous/next become round icon buttons so
+   they don't cover the text. The label is hidden visually but still read by
+   screen readers. */
+@media (max-width: $tabletPortrait), (max-height: 500px) {
+  .navButton {
+    bottom: 1.6rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    padding: 0;
+    border-radius: 50%;
+    gap: 0;
+    justify-content: center;
+
+    div {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  }
+
+  .previousChapter {
+    left: 1.6rem;
+  }
+
+  .nextChapter {
+    right: 1.6rem;
+  }
 }

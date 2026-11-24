@@ -189,7 +189,11 @@ const MainMenu = ({ isMenuOpen, closeMenu, isDarkMode, toggleDarkMode }) => {
           />
         </div>
 
-        <ButtonUnstyled onClick={closeMenu} className={styles.closeButton}>
+        <ButtonUnstyled
+          onClick={closeMenu}
+          className={styles.closeButton}
+          aria-label="Close menu"
+        >
           <CloseX />
         </ButtonUnstyled>
       </div>

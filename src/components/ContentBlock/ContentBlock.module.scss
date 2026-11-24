@@ -7,3 +7,19 @@
     padding-right: 5rem;
   }
 }
+
+@import "../../config/breakpoints.scss";
+
+@media (max-width: $tabletPortrait) {
+  .contentBlock,
+  .contentBlock.noMenu {
+    padding: 0 6rem;
+  }
+}
+
+@media (max-width: $phone) {
+  .contentBlock,
+  .contentBlock.noMenu {
+    padding: 0 2rem;
+  }
+}

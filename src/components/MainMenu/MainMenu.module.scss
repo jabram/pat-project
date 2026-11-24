@@ -67,3 +67,16 @@
     border-top-left-radius: 3rem;
   }
 }
+
+@import "../../config/breakpoints.scss";
+
+/* phones: leave room on the left for the close button, which sits outside the menu */
+@media (max-width: $phone) {
+  .menuContainer {
+    width: calc(100vw - 7.2rem);
+  }
+
+  .closeButton {
+    right: calc(100% + 1.6rem);
+  }
+}

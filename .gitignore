@@ -25,3 +25,5 @@ yarn-error.log*
 .env 
 
 /src/components/DontCommitContent
+# responsive check screenshots
+/responsive-screenshots

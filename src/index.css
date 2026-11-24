@@ -11,6 +11,8 @@ html {
 
 body {
   margin: 0;
+  /* safety net: never let one wide element make the whole page scroll sideways */
+  overflow-x: clip;
   font-family: "Playfair Display", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -89,7 +91,7 @@ blockquote p {
   line-height: 1.2;
   font-weight: bold;
   position: relative;
-  color: #000;
+  color: var(--color-quote, #000);
   text-align: center;
 }
 
@@ -120,6 +122,50 @@ footer p {
 footer p sup {
   font-size: 1rem;
   padding-right: 0.35rem;
+}
+
+/* phones (matches $phone in src/config/breakpoints.scss) */
+@media (max-width: 600px) {
+  h3,
+  h4 {
+    font-size: 3.4rem;
+  }
+
+  h4 {
+    margin: 6rem 0 4rem;
+  }
+
+  p,
+  li {
+    font-size: 1.9rem;
+  }
+
+  blockquote {
+    margin-inline: 1rem;
+  }
+
+  blockquote,
+  blockquote p {
+    font-size: 2.6rem;
+  }
+
+  /* the quote/music icon sits above the quote instead of hanging off the left */
+  blockquote > p:before {
+    position: static;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  footer {
+    margin-block: 6rem;
+  }
+}
+
+/* portrait tablets (matches $tabletPortrait in src/config/breakpoints.scss) */
+@media (min-width: 601px) and (max-width: 820px) {
+  blockquote {
+    margin-inline: 6rem;
+  }
 }
 
 @font-face {

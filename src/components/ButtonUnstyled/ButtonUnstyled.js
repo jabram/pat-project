@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./ButtonUnstyled.module.scss";
 
-const ButtonUnstyled = ({ className, onClick, children }) => {
+const ButtonUnstyled = ({ className, onClick, children, ...rest }) => {
   return (
     <button
       className={`${styles.unstyledButton} ${className}`}
       onClick={onClick}
+      {...rest}
     >
       {children}
     </button>

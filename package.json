@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "check:responsive": "node scripts/responsive-check.mjs"
   },
   "eslintConfig": {
     "extends": [
@@ -72,6 +73,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "playwright": "^1.65.1",
     "prop-types": "^15.8.1",
     "typescript": "^6.0.2",
     "webpack": "^5.75.0"

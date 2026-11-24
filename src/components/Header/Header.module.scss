@@ -54,3 +54,47 @@
 .menuIcon {
   font-size: 3rem;
 }
+
+@import "../../config/breakpoints.scss";
+
+@media (max-width: $tablet) {
+  .menuButton {
+    padding: 0.6rem 1rem 0.6rem 0; // taller tap area for touch
+  }
+}
+
+/* phones (either orientation) and portrait tablets: drop the book title so
+   the chapter title has room */
+@media (max-width: $tabletPortrait), (max-height: 500px) {
+  .header {
+    gap: 1.6rem;
+  }
+
+  .bookTitle {
+    display: none;
+  }
+
+  .chapterTitles {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+
+    // keep the header one line tall; long chapter titles get "..."
+    > p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .menuButton {
+    flex: 0 0 auto;
+    padding: 0.6rem;
+  }
+}
+
+@media (max-width: $phone) {
+  .header {
+    padding: 0.8rem 1.4rem 0.8rem 2rem;
+  }
+}

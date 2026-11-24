@@ -34,7 +34,11 @@ const Player = ({
             <Markdown>{lyrics}</Markdown>
           </div>
         )}
-        <ButtonUnstyled onClick={onClose} className={styles.closeButton}>
+        <ButtonUnstyled
+          onClick={onClose}
+          className={styles.closeButton}
+          aria-label="Close player"
+        >
           <CloseX />
         </ButtonUnstyled>
       </div>

@@ -13,3 +13,16 @@ svg {
 .sectionContent {
   overflow: hidden;
 }
+
+@import "../../config/breakpoints.scss";
+
+/* phones: long part names wrap, so keep them left-aligned with the other items */
+@media (max-width: $phone) {
+  .section button {
+    text-align: left;
+  }
+
+  .titleText {
+    padding-right: 2rem;
+  }
+}

@@ -25,12 +25,14 @@ const ExpandableBlock = ({ title, children }) => {
         variants={{
           expanded: {
             height: "auto",
-            padding: "3rem",
+            paddingTop: "3rem",
+            paddingBottom: "3rem",
             transition: { when: "beforeChildren" },
           },
           collapsed: {
             height: 16,
-            padding: "0 3rem",
+            paddingTop: 0,
+            paddingBottom: 0,
             transition: { when: "afterChildren" },
           },
         }}
